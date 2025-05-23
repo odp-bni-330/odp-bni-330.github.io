@@ -1,0 +1,83 @@
+/* Container utama */
+.container{
+    background-color:#FFFBDE;
+}
+
+/* Header utama */
+h1{
+    background-color: #90D1CA;
+    text-align: center;
+    color: #641B2E;
+    /* margin: 0%; */
+}
+
+/* Teks biodata diri */
+.biodata-diri{
+    display: inline-block;  
+    color: #641B2E;
+    margin-left: 120px;
+    margin-top: 20px;
+
+    /* posisi dibuat absolut di tengah */
+    position: absolute;
+}
+
+/* Foto profil */
+.foto-profil{
+    display: inline-block;
+    position:sticky;
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+/* Logo BNI */
+.logo-BNI{
+    position:fixed; 
+    margin-left: 300px;
+    margin-top: 2px;
+}
+
+/* Deskripsi di bawah gambar */
+.nomor_TPP{
+    color:#641B2E;
+    text-align: center;
+    font-size:  10px;
+    padding-top: 0%;
+    margin-left: 42px;
+    position:fixed;
+    font-style: oblique;
+}
+
+/* Tombol 'Hubungi' */
+.button-hubungi{
+    margin-left: 350px;
+    background-color: orange;
+    border-radius:12px;
+    padding: 10px;
+    border: 1px solid #04AA6D;
+}
+
+/* Tombol 'Hubungi' ketika di-lewati mouse (hover) */
+.button-hubungi:hover{
+    margin-left: 350px;
+    background-color: #FBDB93;
+    border-radius:12px;
+    padding: 10px;
+}
+
+
+/* Tulisan copyright di paling bawah */
+#copyright{
+    font-size:xx-small;
+    text-align: center;
+    background-color: #90D1CA;
+    color: #641B2E;
+    font-style: italic;
+}
+
+/* Agar kanvas tidak "bocor" */
+body, h1{
+    margin: 0;
+    padding: 0;
+}

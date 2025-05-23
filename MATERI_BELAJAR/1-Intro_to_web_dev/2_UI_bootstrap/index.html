@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta data dokumen -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-Based Internship</title>
+
+    <!-- LANGKAH 1 : add cdn bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Hubungkan HTML dengan CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container py-5">
+        <!-- container : provides a responsive fixed-width layout -->
+         <!-- py-5 : This is a Bootstrap spacing utility class:
+            p = padding
+            y = vertical direction (top and bottom)
+            5 = size scale (from 0 to 5+, where 5 is a large amount of spacing) -->
+
+        <h1 class="main-title text-center text-md-start">Telusuri Project-Based Internship yang cocok untuk kamu!</h1>
+        <!-- main-title : class buatan sendiri -->
+        <!-- text-center : class Bootstrap untuk menengahkan teks secara horizontal -->
+        <!-- text-md-start : class Bootstrap untuk mulai dari ukuran layar medium (≥768px), teks akan diatur menjadi rata kiri (start). -->
+
+        <div class="row g-4">
+        <!-- row : class bootstrap u/ membuat baris dalam sistem grid 12 kolom Bootstrap. -->
+         <!-- g-4 : Bootstrap spacing utility -->
+            <!-- g = gutters (jarak antar kolom dan baris) -->
+             <!-- 4 = ukuran skala Bootstrap: 0–5 -->
+
+            <!-- Baris Pertama -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <!--    | Class      | Maksudnya                                                                                 |
+                        | ---------- | ----------------------------------------------------------------------------------------- |
+                        | `col-12`   | Di layar kecil (mobile, <576px), kolom ini selebar 12 kolom → penuh 100%                  |
+                        | `col-md-6` | Di layar sedang (≥768px), kolom ini selebar 6 kolom → setengah lebar (50%)                |
+                        | `col-lg-4` | Di layar besar (≥992px), kolom ini selebar 4 kolom → sepertiga lebar (33.33%)             |
+                -->
+                <div class="internship-card">
+                    <img width="100px" src="https://th.bing.com/th/id/R.d3e980ef641d1ff14dfc21ba381a69c2?rik=VSmRzOZOAYoyIw&riu=http%3a%2f%2f4.bp.blogspot.com%2f-8Uv-chqMPUY%2fUOwDvcKDVzI%2fAAAAAAAAKng%2fVExw9VE47yQ%2fs1600%2fLOGO%2bKIMIA%2bFARMA.png&ehk=1akDAAxu74d79ky2InhqVRXZ9fzYaxf66cwMWXVwBws%3d&risl=&pid=ImgRaw&r=0" alt="">
+                    <h6 class="card-subtitle">Kimia Farma Big Data Analytics</h6>
+                    <a href="#" class="btn btn-outline-primary btn-sm view-program">Lihat Program</a>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="internship-card">
+                    <img width="35px" src="https://media.licdn.com/dms/image/C4D0BAQFQHr5JkKgbjg/company-logo_200_200/0/1615202251693?e=2147483647&v=beta&t=VZNk8JFfQDl5jAEoCneTUEZPNKISFe-GhjnZ6aof1LM" alt="">
+                    <h6 class="card-subtitle">FundEx UI/UX Designer</h6>
+                    <a href="#" class="btn btn-outline-primary btn-sm view-program">Lihat Program</a>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="internship-card">
+                    <img width="50px" src="https://img2.biggo.com/siN50Po1cZU0CWKpSs9MZSBFCJ2gTsCgm5MNM60JV0LI/https://biggo-site-type.ap-south-1.linodeobjects.com/logo_id_mall_jakmall_1587344562" alt="">
+                    <h6 class="card-subtitle">Jakmali Campaign & Digital Performance Officer</h6>
+                    <a href="#" class="btn btn-outline-primary btn-sm view-program">Lihat Program</a>
+                </div>
+            </div>
+            
+            <!-- Baris Kedua -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="internship-card">
+                    <img width="75px" src="https://th.bing.com/th/id/OIP.7XXg6G8q794yGVlCBuKlYQHaDO?rs=1&pid=ImgDetMain" alt="">
+                    <h6 class="card-subtitle">Rakamin Academy Product Manager</h6>
+                    <a href="#" class="btn btn-outline-primary btn-sm view-program">Lihat Program</a>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="internship-card">
+                    <img width="100px" src="https://th.bing.com/th/id/OIP.gnTlthM5T1tPP0nprpo9_QHaCK?rs=1&pid=ImgDetMain" alt="">
+                    <h6 class="card-subtitle">Bank Mandiri Mobile Apps Developer</h6>
+                    <a href="#" class="btn btn-outline-primary btn-sm view-program">Lihat Program</a>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="internship-card">
+                    <img width="100px" src="https://th.bing.com/th/id/OIP.f5OD6FdmsERD8ZwVtBwBrwAAAA?rs=1&pid=ImgDetMain" alt="">
+                    <h6 class="card-subtitle">Kompas Growth Center Learning Designer</h6>
+                    <a href="#" class="btn btn-outline-primary btn-sm view-program">Lihat Program</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="#" class="more-programs">Telusuri program lainnya</a>
+        </div>
+    </div>
+
+    <!-- LANGKAH 2 : add cdn popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

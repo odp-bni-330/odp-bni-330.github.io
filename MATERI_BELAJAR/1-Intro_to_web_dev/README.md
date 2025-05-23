@@ -207,5 +207,5 @@ grid pada bootstrap : sistem layout 12 kolom
 - [Bootstrap tutorial W3school](https://www.w3schools.com/bootstrap5/bootstrap_colors.php )
 - [CSS grid garden](https://cssgridgarden.com/)
 
-
+---
 [🏠Back to Course Lists](https://odp-bni-330.github.io/)

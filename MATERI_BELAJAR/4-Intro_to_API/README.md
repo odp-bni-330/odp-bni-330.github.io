@@ -1,6 +1,6 @@
 # Introduction to API
 
-This guide is designed for beginners. I'll first explain what APIs are, then guide you through a hands-on learning experience using [Postman's "What is an API?"](https://www.postman.com/what-is-an-api/) interactive guide.
+This beginner-friendly guide will help you understand what APIs are, using simple examples and analogies, and then walk you step-by-step through building your own basic RESTful API.
 
 ---
 
@@ -46,13 +46,13 @@ A **RESTful API** is an API that follows REST principles. Key characteristics:
 - `PUT /users/123` → Update a user
 - `DELETE /users/123` → Delete a user
 
-## 🧠 Part 3: How a Server Handles RESTful APIs (with JavaScript)
+## 🧠 Part 3: How a Server Handles RESTful APIs
 
 While earlier we used JavaScript on the client side (browser) to *consume* APIs, now let’s see how APIs are *created* on the server.
 
 We’ll use [Express.js](https://expressjs.com/) — a popular web framework for Node.js — to handle common REST methods.
 
-### RESTful API Handler Example (Server-Side)
+### RESTful API Example
 
 ```javascript
 // server.js

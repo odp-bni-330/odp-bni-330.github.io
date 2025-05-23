@@ -185,21 +185,6 @@ cara pakai:
 - **LANGKAH 2** : add `cdn popper` di tag `body` sebelum closing tag `body`
 - **LANGKAH 3** : coba _copy_ component yg ada di [bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
-utilities bootstrap
-
-# Referensi Tambahan
-[perbedaan XML dan JSON](https://www.geeksforgeeks.org/difference-between-json-and-xml/)
-[single page application](https://www.geeksforgeeks.org/what-is-single-page-application/)
-[web versioning](https://www.geeksforgeeks.org/web-1-0-web-2-0-and-web-3-0-with-their-difference/)
-[product requirement document](https://www.projectmanager.com/blog/product-requirements-document)
-[business requirement document](https://www.projectmanager.com/blog/business-requirements-document)
-[html element reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)
-[CSS Flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-[Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-[Latihan Flexbox](https://flexboxfroggy.com/)
-[Bootstrap tutorial W3school](https://www.w3schools.com/bootstrap5/bootstrap_colors.php )
-[CSS grid garden](https://cssgridgarden.com/)
-
 ## grid theory
 grid pada bootstrap : sistem layout 12 kolom
 ```
@@ -208,3 +193,19 @@ grid pada bootstrap : sistem layout 12 kolom
 <------- span 4 -------><------- span 4 -------><------- span 4 ------->
 ...
 ```
+
+# Referensi Tambahan
+- [perbedaan XML dan JSON](https://www.geeksforgeeks.org/difference-between-json-and-xml/)
+- [single page application](https://www.geeksforgeeks.org/what-is-single-page-application/)
+- [web versioning](https://www.geeksforgeeks.org/web-1-0-web-2-0-and-web-3-0-with-their-difference/)
+- [product requirement document](https://www.projectmanager.com/blog/product-requirements-document)
+- [business requirement document](https://www.projectmanager.com/blog/business-requirements-document)
+- [html element reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)
+- [CSS Flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Latihan Flexbox](https://flexboxfroggy.com/)
+- [Bootstrap tutorial W3school](https://www.w3schools.com/bootstrap5/bootstrap_colors.php )
+- [CSS grid garden](https://cssgridgarden.com/)
+
+
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

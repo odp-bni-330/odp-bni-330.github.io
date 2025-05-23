@@ -46,6 +46,8 @@ A **RESTful API** is an API that follows REST principles. Key characteristics:
 - `PUT /users/123` → Update a user
 - `DELETE /users/123` → Delete a user
 
+---
+
 ## 🧠 Part 3: How a Server Handles RESTful APIs
 
 While earlier we used JavaScript on the client side (browser) to *consume* APIs, now let’s see how APIs are *created* on the server.
@@ -110,6 +112,7 @@ app.listen(PORT, () => {
 });
 ```
 
+---
 
 ## 🔄 Recap & Hands-On Projects
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+
+    <!-- defer : instructs the browser to download the script in parallel with parsing the HTML document and execute it after the document has been completely parsed. This attribute is particularly useful for improving the performance and user experience of web pages. -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- id : header-id -->
+    <h1 id="header-id">DOM manipulation</h1>
+
+    <h2>Biodata</h2>
+    <p id="welcome-id"> welcome to Wondr by BNI Page!</p>
+
+    <!--  selektro : id  -->
+    <div id="biodata-id">
+        <p>Nama: Bostang Palaguna</p>
+        <p>TPP : T070556</p>
+    </div>
+
+    <!-- selektor : class -->
+    <div class="biodata-orangtua-class">
+        <ul>
+            <li>Nama: Erika Marpaung</li>
+            <li>Hubungan : Ibu </li>
+        </ul>
+    </div>
+
+
+    <div id="daftar-anggota">
+        <h2>Anggota kelompok 4:</h2>
+    </div>
+
+    <div id="id-button-group">
+        <!-- DOM JS var. : getButton -->
+        <button id="button-aksi" type="button">KLIK DI SINI</button>
+
+        <!-- DOM JS var. : buttonUbahUkuranLogo -->
+        <button id="button-ubah-ukuran-logo-rakamin" type="button">UBAH UKURAN GAMBAR</button>
+    </div>
+
+    <div id="gambar-rakamin-div">
+
+        <!-- Gambar yang belum dikasih 'src'  -->
+         <!-- DOM JS variable : logoRakamin -->
+        <img id = "logo-rakamin" alt="Logo Rakamin" width="200">
+    </div>
+</body>
+</html>

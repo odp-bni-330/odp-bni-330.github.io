@@ -1,0 +1,55 @@
+<!-- Contoh sederhana melakukan javascript in-document  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript dalam HTML</title>
+</head>
+<body>
+    <h1>Javascript dalam HTML</h1>
+
+    <!-- Java script in-document -->
+    <script>
+        // menampilkan ke log
+        console.log("Ini adalah teks");     // 1 buah statement
+
+        // contoh kondisional.
+        let flagging = true
+        if (flagging)
+        {
+            console.log("flagging bernilai benar")
+        }
+
+        //  contoh array
+        let numbers = [1,2,3,4,5,6]
+        
+        // memeriksa elemen pertama 'numbers' apakah genap
+        if (numbers[0] % 2 != 0)
+        {
+            console.error("elemen pertama array bukan genap")
+        }
+
+        // memeriksa apakah panjang array 'numbers' kurang dari 10
+        if (numbers.length < 10)
+        {
+            console.warn("panjang array numbers kurang dari 10");
+        }
+
+        // memeriksa elemen pertama apakah sama dengan 1 (tipe data tidak masalah (string/char))
+        if (numbers[0] == '1')
+        {
+            console.log("elemen pertama numbers sama dengan satu");
+        }
+        else
+        {
+            console.log("elemen pertama numbers BUKAN satu");   
+        }
+
+        /*  catatan : 
+        The strict equality operator (===) behaves identically to the abstract equality operator (==) except no type conversion is done, and the types must be the same to be considered equal.
+        */
+    </script>
+</body>
+</html>

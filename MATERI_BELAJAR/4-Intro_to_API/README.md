@@ -1,4 +1,4 @@
-# Beginner API Workshop: Learn with Postman and Real-World Analogies
+# Introduction to API
 
 This guide is designed for beginners. I'll first explain what APIs are, then guide you through a hands-on learning experience using [Postman's "What is an API?"](https://www.postman.com/what-is-an-api/) interactive guide.
 

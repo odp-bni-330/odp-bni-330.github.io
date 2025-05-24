@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Mei 2025 -->
+
 # Javascript (Asynchronous & Fetch API)
 
 ## Synchronous

@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Mei 2025 -->
+
 # Introduction to JavaScript
 
 javascript awalnya adalah bahasa pemrograman front-end dan lihat di console browser.

@@ -15,3 +15,4 @@
 ## Cara Berkontribusi
 1. Apabila ingin menambahkan materi belajar (catatan, file proyek, dll.), silakan menambahkan di folder `MATERI_BELAJAR` sesuai dengan hari _bootcamp_ tersebut.
 
+> ⚠️ Sebelum melakukan _commit_ , pastikan bahwa kemajuan _local repo_ anda sudah sama dengan _main repo_ kita untuk menghindari **_Conflict_** saat _commit_. Lakukan `git pull` untuk melakukan penyetaraan kemajuan.

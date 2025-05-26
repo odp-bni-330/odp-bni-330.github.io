@@ -75,7 +75,7 @@ mekanisme : _Round robbin_
 
 A client request is forwarded to each server in turn. The algorithm instructs the load balancer to go back to the top of the list and repeats again.
 
-![round-robbin-load-balancing](image.png)
+![round-robbin-load-balancing](./img/round-robbin-load-balancing.png)
 
 
 ## Docker

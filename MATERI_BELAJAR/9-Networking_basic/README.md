@@ -210,7 +210,7 @@ docker exec -it [nama_images] /bin/bash
 
 #### TIDAK PERLU DILAKUKAN!
 ### LAKUKAN INI KALAU MOUNTING /nodevol ke appsrwback gagal saja
-# mengapa? karena perlu download node.js lagi -> tidak efisien kuota
+# mengapa? karena perlu download node.js lagi → tidak efisien kuota
 # install node.js pada docker terlebih dahulu
 # apt update
 # apt install curl -y

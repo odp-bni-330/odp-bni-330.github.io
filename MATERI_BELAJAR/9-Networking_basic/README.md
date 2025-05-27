@@ -149,6 +149,9 @@ user hanya tahu port haproxy (8080).
 
 
 ## (HANDS-ON) Docker
+
+![flow-project](./img/flow-project.png)
+
 **tujuan** : membuat beberapa `docker` yang bisa menjalankan `node` di `appsrwback-serverless` kemudian menggunakan `haproxy` untuk load-balancing terhadap request yang dibuat dengan `curl`.
 
 `node.js` untuk _docker optimization_ → bisa menghemat biaya. Bayangkan kalau mau menginstall 100 docker _instances_ → berapa banyak space yang dibutuhkan.
@@ -162,7 +165,7 @@ yang perlu disiapkan untuk _hands-on_:
 - `node`
 
 ```bash
-su                                # untuk akses root
+sudo su                           # untuk akses root
 apt update                        # update package repo
 apt install docker                # install docker
 docker --version                  # cek versi docker yg terinstall
@@ -194,8 +197,6 @@ mkdir -p /nodevol/bin /nodevol/lib
 # salin node dan npm ke /nodevol
 cp -r /usr/local/bin/* /nodevol/bin/
 cp -r /usr/local/lib/node_modules /nodevol/lib/
-
-
 ```
 
 ### Langkah 3 : Jalankan appsrwback
@@ -263,8 +264,8 @@ tail -f haproxy.log # menghasilkan
 ```bash
 curl http://127.0.0.1:8080/api/user     # pada tab baru
 ```
-
-perhatikan bahwa haproxy melakukan request ke server 1 dan 2 secara bergantian (round-robin)
+atau bisa akses lewat `browser` dan juga `postman`.
+perhatikan bahwa haproxy melakukan request ke server 1 dan 2 secara bergantian (round-robin).
 
 # Catatan tambahan
 

@@ -90,7 +90,7 @@ docker volume create [nama_volume]
 ```
 contoh:
 ```bash
-docker volume create nodevl
+docker volume create nodevol
 ```
 
 - menghapus volume docker
@@ -149,34 +149,13 @@ user hanya tahu port haproxy (8080).
 
 
 ## (HANDS-ON) Docker
-**tujuan** : membuat `docker` yang bisa menjalankan `node` di `appsrwback-serverless`
+**tujuan** : membuat beberapa `docker` yang bisa menjalankan `node` di `appsrwback-serverless` kemudian menggunakan `haproxy` untuk load-balancing terhadap request yang dibuat dengan `curl`.
 
-### Langkah 0 : install docker on linux
-```bash
-# Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install ca-certificates curl
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
+`node.js` untuk _docker optimization_ → bisa menghemat biaya. Bayangkan kalau mau menginstall 100 docker _instances_ → berapa banyak space yang dibutuhkan.
 
-# Add the repository to Apt sources:
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-```
-```bash
-# Install the Docker packages.
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-```bash
-# Verify that the installation is successful by running the hello-world image
-sudo docker run hello-world
-```
+Pre-requisites : sudah menginstall docker di lnux.
 
-### Langkah 1 : Install pre-requisities 
+### Langkah 0 : Install pre-requisities 
 yang perlu disiapkan untuk _hands-on_:
 - `bookworm-haproxy`
 - `bookworm-appsrwback-serverless`
@@ -188,13 +167,19 @@ apt update                        # update package repo
 apt install docker                # install docker
 docker --version                  # cek versi docker yg terinstall
     # download docker images
-docker pull ghcr.io/hendram/node
+docker pull ghcr.io/ /node
 docker pull ghcr.io/hendram/bookworm-appsrwback-serverless
 docker pull ghcr.io/hendram/bookworm-haproxy
 docker images                     # cek docker images yang sudah terpasang 
 ```
 
-### Langkah 2 : Jalankan Node
+### Langkah 1 : Buat volume
+tempat kita menginstall `node` yang kemudian akan di-mount ke banyak `appsrwback`
+```bash
+docker volume create nodevol
+```
+
+### Langkah 2 : Export Node ke volume local (nodevol)
 ```bash
 docker run -it -d --network=host -v nodevol:/nodevol ghcr.io/hendram/node:bookworm-slim
 
@@ -203,51 +188,65 @@ docker ps
 # masuk ke dalam docker
 docker exec -it [nama_image] /bin/bash
 # setelah masuk ke docker yang berjalan:
-cd /usr/lib
-cp /usr/local/bin/node /nodeval
+# buat folder /bin dan /lib di nodevol
+mkdir -p /nodevol/bin /nodevol/lib
+
+# salin node dan npm ke /nodevol
+cp -r /usr/local/bin/* /nodevol/bin/
+cp -r /usr/local/lib/node_modules /nodevol/lib/
+
+
 ```
 
 ### Langkah 3 : Jalankan appsrwback
 #### Langkah 3.1 : Buat server 1 di Port 3000
 - membuat server di sebuah port (misal 3000)
 ```bash
+# mount nodevol yang berisi node.js ke appsrwback
 docker run -it -d --network=host -v nodevol:/nodevol ghcr.io/hendram/bookworm-appsrwback-serverless bash
 docker ps           # lihat apa nama docker imagesnya
 docker exec -it [nama_images] /bin/bash
-cd home/appsrwback
 
+#### TIDAK PERLU DILAKUKAN!
+### LAKUKAN INI KALAU MOUNTING /nodevol ke appsrwback gagal saja
+# mengapa? karena perlu download node.js lagi -> tidak efisien kuota
 # install node.js pada docker terlebih dahulu
-apt update
-apt install curl -y
-curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-apt install -y nodejs
+# apt update
+# apt install curl -y
+# curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+# apt install -y nodejs
 
+# setelah masuk ke dalam docker :
+# menambahkan nodevol ke path
+export PATH=/nodevol/bin:$PATH
+export NODE_PATH=/nodevol/lib/node_modules
 
+# pindah ke folder home/appsrwback
+cd ~/home/appsrwback
 npx vercel dev
 ```
 
-#### Langkah 3.1 : Buat server 2 di Port 3001
-- membuat process baru (akan otomatis di-assign ke port 3001)
-- buat tab baru.
-- lakukan hal yang sama dengan langkah 3.1.
+#### Langkah 3.2 : Buat server 2 di Port 3001
+lakukan langkah yang sama percis dengan **Langkah 3.1**.
+
 ```bash
 sudo su
-docker images
-docker run -it -d --network=host -v nodevol:/usr/local ghcr.io/hendram/bookworm-appsrwback-serverless bash
-docker ps       # lihat apa nama imagesnya
+
+docker run -it -d --network=host -v nodevol:/nodevol ghcr.io/hendram/bookworm-appsrwback-serverless bash
+docker ps           # lihat apa nama docker imagesnya
 docker exec -it [nama_images] /bin/bash
+
+# setelah masuk ke dalam docker :
+# menambahkan nodevol ke path
+export PATH=/nodevol/bin:$PATH
+export NODE_PATH=/nodevol/lib/node_modules
+
+# pindah ke folder home/appsrwback
 cd home/appsrwback
-
-# install node.js pada docker terlebih dahulu
-apt update
-apt install curl -y
-curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-apt install -y nodejs
-
 npx vercel dev
 ```
 
-### Langkah 4 : Jalankah Haproxy
+### Langkah 4 : Jalankah Haproxy & Pantau Log
 buka tab baru:
 ```bash
 sudo su
@@ -255,6 +254,9 @@ docker run -it -d --network=host ghcr.io/hendram/bookworm-haproxy bash
 docker ps       # lihat nama_images
 docker exec -it [nama_images] /bin/bash
 haproxy -f /etc/haproxy/haproxy.cfg
+
+cd /var/log     # pindah ke folder log
+tail -f haproxy.log # menghasilkan 
 ```
 
 ### Langkah 5 : Test API
@@ -262,14 +264,25 @@ haproxy -f /etc/haproxy/haproxy.cfg
 curl http://127.0.0.1:8080/api/user     # pada tab baru
 ```
 
-### Langkah 6 : cek log pada Haproxy
-kembali ke tab haproxy (Langkah 4):
+perhatikan bahwa haproxy melakukan request ke server 1 dan 2 secara bergantian (round-robin)
+
+# Catatan tambahan
+
+## melihat statistik Haproxy
+
 ```bash
-cd /var/log     # 
-tail -f haproxy.log # menghasilkan 
+localhost:9000/stats
 ```
 
-perhatikan bahwa haproxy melakukan request ke server 1 dan 2 secara bergantian (round-robin)
+## menghapus volume
+Misalkan kita mau menghapus volume `nodevol`. Maka kita perlu hapus semua docker yang masih menggunakan volume tersebut.
+```bash
+# hapus semua inactive docker yang menggunakan volume `nodevol`
+docker ps -a --filter volume=nodevol -q | xargs -r docker rm -f
+
+# hapus volume `nodevol`
+docker volume rm nodevol
+```
 
 # Referensi
 - [Haproxy](https://github.com/users/hendram/packages/container/package/bookworm-haproxy)

@@ -170,7 +170,7 @@ apt update                        # update package repo
 apt install docker                # install docker
 docker --version                  # cek versi docker yg terinstall
     # download docker images
-docker pull ghcr.io/ /node
+docker pull ghcr.io/hendram/node:bookworm-slim
 docker pull ghcr.io/hendram/bookworm-appsrwback-serverless
 docker pull ghcr.io/hendram/bookworm-haproxy
 docker images                     # cek docker images yang sudah terpasang 

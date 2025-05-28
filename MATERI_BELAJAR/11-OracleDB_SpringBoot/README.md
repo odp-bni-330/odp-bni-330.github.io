@@ -181,4 +181,20 @@ Terlampir di : `./handson/connect-oracle-db.zip`
 **Login dengan Postman (password salah)**
 ![test-login-password-salah](./img/test-login-password-salah.png)
 
-### Connecting SpringBoot to OracleSQL
+## Catatan Tambahan:
+- memberhentikan DB
+```bash
+#  syntax : docker stop [nama_image]
+docker stop oracle-xe
+```
+- menyalakan kembali docker (mengandung OracleDB) yang sebelumnya sudah dimatikan.
+```bash
+docker ps -a            # menampilkan nama docker container (semua, termasuk yang in-active)
+
+# menyalakan kembali docker tersebut
+# syntax: docker start [nama_image] 
+docker start oracle-xe
+
+# menyalakan kembali servernya
+docker exec -it oracle-xe sqlplus bostang/password@localhost:1521/XEPDB1
+```

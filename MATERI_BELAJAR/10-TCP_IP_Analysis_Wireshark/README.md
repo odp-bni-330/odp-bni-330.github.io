@@ -1,3 +1,5 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Mei 2025 -->
 # Security
 ## Haproxy
 HAProxy : High Availability Proxy
@@ -263,3 +265,6 @@ menggunakan filter:
 ```
 ip.addr == xxx.xxx.xxx.xxx
 ```
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

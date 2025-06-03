@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # DevSecOps
 ## Database Integration API & API Versioning Implementation
 
@@ -98,7 +101,7 @@ docker exec -it oracle-xe sqlplus system/<your password>@localhost:1521/XEPDB1
 
 - Menampilkan log dan status container
 ```bash
-docker logs -f oracle-xe-21c
+docker logs -f oracle-xe
 ```
 > ini akan terus berjalan tanpa henti. Jadi buka tab baru untuk melakukan aktivitas lain.
 
@@ -108,7 +111,7 @@ docker logs -f oracle-xe-21c
 
 - **Langkah (-1)** : jalankan docker 
 ```bash
-docker run -d --name oracle-xe-21c \
+docker run -d --name oracle-xe \
   -p 1521:1521 -p 5500:5500 \
   -e ORACLE_PWD=Oracle123 \
   oracle/database:21.3.0-xe
@@ -124,7 +127,7 @@ docker exec -it [nama_images]
 
 - **Langkah 1** : Login sebagai admin
 ```bash
-docker exec -it oracle-xe-21c sqlplus system/Oracle123@XEPDB1
+docker exec -it oracle-xe sqlplus system/Oracle123@XEPDB1
 ```
 
 > ⚠️ Demi alasan _security_, tidak disarankan untuk membuat tabel sebagai admin. Sebaiknya buat user baru lalu beri kredensial.
@@ -141,7 +144,7 @@ ALTER USER auth_user QUOTA UNLIMITED ON USERS;
 
 - **Langkah 3** : Login sebagai user yang baru dibuat 
 ```bash
-docker exec -it oracle-xe-21c sqlplus bostang/password@XEPDB1
+docker exec -it oracle-xe sqlplus bostang/password@XEPDB1
 ```
 
 - **Langkah 4** : Membuat tabel
@@ -198,3 +201,6 @@ docker start oracle-xe
 # menyalakan kembali servernya
 docker exec -it oracle-xe sqlplus bostang/password@localhost:1521/XEPDB1
 ```
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

@@ -1,5 +1,6 @@
 # Deployment Fundamentals
-Deployment Concepts, Pods, ReplicaSets, DeploymentConfigs
+
+> Deployment Concepts, Pods, ReplicaSets, DeploymentConfigs
 
 membangun _pipeline_ / membangun aturan _deployment_
 

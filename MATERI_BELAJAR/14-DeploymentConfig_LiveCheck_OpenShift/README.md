@@ -260,6 +260,19 @@ oc set probe deployment/demo-openshift-hybrid-cloud --readiness --get-url=http:/
 oc set probe deployment/demo-openshift-hybrid-cloud --liveness --get-url=http://demo-openshift-hybrid-cloud:8080/actuator/health --initial-delay-seconds=30 --timeout-seconds=5
 ```
 
+> Catatan dari DeepSeek :
+Penggunaan `demo-openshift-hybrid-cloud:8080` akan mengakibatkan error pada readiness & liveliness check. gunakan `localhost:8080`.
+```bash
+# Hapus probe yang salah terlebih dahulu
+oc set probe deployment/demo-openshift-hybrid-cloud --remove --readiness --liveness
+
+# Set probe yang benar menggunakan localhost
+oc set probe deployment/demo-openshift-hybrid-cloud --readiness --get-url=http://localhost:8080/actuator/health --initial-delay-seconds=60 --timeout-seconds=5 --period-seconds=10
+
+oc set probe deployment/demo-openshift-hybrid-cloud --liveness --get-url=http://localhost:8080/actuator/health --initial-delay-seconds=90 --timeout-seconds=5 --period-seconds=10
+```
+
+
 ### restart deployment
 ```bash
 oc rollout restart deployment/[nama_deployment]

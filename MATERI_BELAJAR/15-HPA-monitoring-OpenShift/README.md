@@ -1,3 +1,9 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Kontributor :
+  - Andrew
+  - Jeremy Christoper  -->
+<!-- Juni 2025 -->
+
 # Horizontal Pod Autoscaller (HPA)
 Scaling concept
 HPA configuration
@@ -10,6 +16,8 @@ _vertical scaling_ -> untuk melakukan komputasi matematis yang lebih berat seper
 _horizontal scaling_ -> untuk melakukan komputasi yang banyak (_concurrent_) misalkan transaksi ketika _high traffic_.
 
 # Hands-on : Horizontal Pod Autoscaller (HPA)
+
+> file : `/handson/demo-openshift-hybrid-cloud.zip`
 
 ## Cara 1 : Web-based GUI
 ![web-based-set-autoscaler](./img/web-based-set-autoscaler.png)
@@ -177,20 +185,10 @@ Contoh permasalahan yang sering muncul:
 - Web console
 - Pahami _error message_.
 
-# Tugas:
-Update tabel `user` menjadi:
-```
-id
-username
-email_address
-is_active
-created_at
-updated_at
-password_hash
-role
-```
-
 # Hands-on : Pengujian Repeating request
+
+>file : `/handson/demo-openshift-hybrid-cloud.zip`
+
 ## Dengan Shell Script
 > `continuous_request_api.sh`
 
@@ -259,6 +257,59 @@ Templates > Building web test plan
 ![konfigurasi-thread-group](./img/konfigurasi-thread-group.png)
 -->
 
+# Tugas: Springboot app dengan Kolom paru pada Tabel
+
+> file : `/handson/opensfhit-springboot-app.zip`
+
+Update tabel `user` menjadi:
+```
+id
+username
+email_address
+is_active
+created_at
+updated_at
+password_hash
+role
+```
+
+**Langkah 0 : Update Kode Sumber**
+
+**Langkah 1: Buat repository secrets**
+
+> Settings > Secret and Variables > Actions > Repository Secrets
+
+`OC_BUILD_NAME`
+![OC_BUILD_NAME](./img/OC_BUILD_NAME.png)
+
+`OC_NAMESPACE`
+![OC_NAMESPACE](./img/OC_NAMESPACE.png)
+
+`OC_SERVER`
+![OC_SERVER_AND_TOKEN](./img/OC_SERVER_AND_TOKEN.png)
+
+> **catatan**:
+pastikan pada `main.yaml` `repository` sama : `main` atau `master`.
+
+**Langkah 2 : Buat `main.yml`**
+buat `main.yml` di :
+```
+.github/workflows/main.yml
+```
+
+**Langkah 3 : Tunggu hingga build selesai**
+
+> Buka Github > Actions > All workflows
+
+**Langkah 5 : Testing dengan Postman**
+
+Testing
+![testing_register_tugas](./img/testing_register_tugas.png)
+
+![testing_login_tugas](./img/testing_login_tugas.png)
+
+![pengamatan-pada-database-dashboard](./img/pengamatan-pada-database-dashboard.png)
+
 # Catatan Tambahan
 **Virtualization vs Containerization**
 ![container-vs-virtual-machine](./img/container-vs-virtual-machine.png)
@@ -274,3 +325,6 @@ Templates > Building web test plan
 contoh : `1.1.3`
 
 dalam implementasinya di versioning / menandakan _release point_ menggunakan github, pakai `git tag`.
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

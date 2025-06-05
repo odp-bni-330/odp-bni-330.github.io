@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # Deployment Fundamentals
 
 > Deployment Concepts, Pods, ReplicaSets, DeploymentConfigs
@@ -288,3 +291,7 @@ login kembali dengan cara akses sandbox open-shift (web) -> pojok kanan atas (pr
 
 ## Arsitektur OpenShift
 ![arsitektur-openshift](./img/arsitektur-openshift.png)
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)
+

@@ -1,0 +1,14 @@
+{
+  "name": "load-balancer",
+  "version": "1.0.0",
+  "description": "Example load balancer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad Fikri",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

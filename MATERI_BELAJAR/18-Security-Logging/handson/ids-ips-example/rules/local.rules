@@ -1,0 +1,2 @@
+alert tcp any any -> any any (msg:"ET POLICY Outbound HTTP Connection"; flow:established; http.uri; content:"testmynids.org"; classtype:misc-activity; sid:2100498; rev:7;)
+drop tcp any any -> any any (msg:"CUSTOM EVIL TRAFFIC DETECTED - DROPPED"; flow:established; content:"malicious_string"; sid:1000001; rev:1;)

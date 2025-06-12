@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  suricata:
+    image: jasonish/suricata
+    # untuk mode IDS, monitor live interface
+    # untuk memproses pcaps, bind mount direktori pcaps
+    volumes:
+      - ./suricata.yaml:/etc/suricata/suricata.yaml:ro
+      - ./rules:/etc/suricata/rules:ro
+      - ./pcaps:/var/lib/suricata/pcaps:ro    # direktori PCAP
+      - ./logs:/var/log/suricata              # suricata log
+    
+    command: suricata -c /etc/suricata/suricata.yaml -r /var/lib/suricata/pcaps/sample.pcap -l /var/log/suricata
+    # untuk live monitoring (IDS/IPS), gunakan network_mode : "host" atau bridge specific interface
+    # network_mode : "host"   # un-comment untuk live network monitoring ( butuh akses host network)
+    cap_add:
+      - NET_ADMIN # u/ kapabilitas IPS dan capture method tertentu
+      - NET_RAW   # u/ akses raw socket u/ packet capture

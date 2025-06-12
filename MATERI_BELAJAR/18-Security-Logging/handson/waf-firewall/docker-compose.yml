@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    image: yeasy/simple-web
+    expose:
+      - "80"
+
+  proxy:
+    build: .
+    ports:
+      - "8082:8080"
+    depends_on:
+      - app

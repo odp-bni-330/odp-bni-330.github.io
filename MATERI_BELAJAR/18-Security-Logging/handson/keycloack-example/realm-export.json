@@ -1,0 +1,29 @@
+{
+    "realm": "demo",
+    "enabled": true,
+    "clients": [
+        {
+            "clientId": "postman-client",
+            "enabled": true,
+            "clientAuthenticatorType": "client-secret",
+            "secret": "secret",
+            "redirectUris": ["https://oauth.pstmn.io/v1/callback"],
+            "publicClient": false,
+            "protocol": "openid-connect",
+            "standardFlowEnabled": true
+        }
+    ],
+    "users": [
+        {
+            "username": "testuser",
+            "enabled": true,
+            "credentials": [
+                {
+                    "type": "password",
+                    "value": "testpass",
+                    "temporary": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  app:
+    image: yeasy/simple-web
+    ports:
+      - "8081:80"
+    expose:
+      - "80"

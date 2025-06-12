@@ -1,0 +1,10 @@
+version: "3"
+services:
+  snort:
+    build: .
+    network_mode: "host"  # Agar bisa akses traffic jaringan host (Linux saja)
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    tty: true
+

@@ -1,0 +1,47 @@
+version: '3.7'
+services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.0
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ports:
+      - "9200:9200"
+    networks: [elk]
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.13.0
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    ports:
+      - "5044:5044"
+    depends_on: [elasticsearch]
+    networks: [elk]
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.13.0
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on: [elasticsearch]
+    networks: [elk]
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:8.13.0
+    volumes:
+      - ./filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - ./app-logs:/var/log/myapp
+    depends_on: [logstash]
+    networks: [elk]
+
+  app:
+    image: busybox
+    command: sh -c 'while true; do echo "[$(date)] App log entry" >> /logs/output.log; sleep 2; done'
+    volumes:
+      - ./app-logs:/logs
+    networks: [elk]
+
+networks:
+  elk:

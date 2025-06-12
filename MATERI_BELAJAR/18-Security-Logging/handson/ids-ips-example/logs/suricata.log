@@ -1,0 +1,53 @@
+[1 - Suricata-Main] 2025-06-12 04:47:31 Notice: suricata: This is Suricata version 7.0.10 RELEASE running in USER mode
+[1 - Suricata-Main] 2025-06-12 04:47:31 Info: cpu: CPUs/cores online: 4
+[1 - Suricata-Main] 2025-06-12 04:47:31 Info: suricata: Setting engine mode to IDS mode by default
+[1 - Suricata-Main] 2025-06-12 04:47:31 Info: suricata: No 'host-mode': suricata is in IDS mode, using default setting 'sniffer-only'
+[1 - Suricata-Main] 2025-06-12 04:47:31 Info: logopenfile: fast output device (regular) initialized: fast.log
+[1 - Suricata-Main] 2025-06-12 04:47:31 Info: logopenfile: eve-log output device (regular) initialized: eve.json
+[1 - Suricata-Main] 2025-06-12 04:47:31 Warning: counters: stats are enabled but no loggers are active
+[1 - Suricata-Main] 2025-06-12 04:47:31 Warning: detect: No rule files match the pattern suricata.rules
+[1 - Suricata-Main] 2025-06-12 04:47:31 Warning: detect: 1 rule files specified, but no rules were loaded!
+[1 - Suricata-Main] 2025-06-12 04:47:31 Info: threshold-config: Threshold config parsed: 0 rule(s) found
+[1 - Suricata-Main] 2025-06-12 04:47:31 Info: detect: 0 signatures processed. 0 are IP-only rules, 0 are inspecting packet payload, 0 inspect application layer, 0 are decoder event only
+[13 - RX#01] 2025-06-12 04:47:31 Error: pcap: unknown file format
+[13 - RX#01] 2025-06-12 04:47:31 Warning: pcap: Failed to init pcap file /var/lib/suricata/pcaps/sample.pcap, skipping
+[13 - RX#01] 2025-06-12 04:47:31 Error: pcap: pcap file reader thread failed to initialize
+[1 - Suricata-Main] 2025-06-12 04:47:31 Notice: threads: Threads created -> RX: 1 W: 4 FM: 1 FR: 1   Engine started.
+[1 - Suricata-Main] 2025-06-12 04:47:31 Notice: suricata: Signal Received.  Stopping engine.
+[1 - Suricata-Main] 2025-06-12 04:47:31 Info: suricata: time elapsed 0.030s
+[1 - Suricata-Main] 2025-06-12 04:50:15 Notice: suricata: This is Suricata version 7.0.10 RELEASE running in USER mode
+[1 - Suricata-Main] 2025-06-12 04:50:15 Info: cpu: CPUs/cores online: 4
+[1 - Suricata-Main] 2025-06-12 04:50:15 Info: suricata: Setting engine mode to IDS mode by default
+[1 - Suricata-Main] 2025-06-12 04:50:15 Info: suricata: No 'host-mode': suricata is in IDS mode, using default setting 'sniffer-only'
+[1 - Suricata-Main] 2025-06-12 04:50:15 Info: logopenfile: fast output device (regular) initialized: fast.log
+[1 - Suricata-Main] 2025-06-12 04:50:15 Info: logopenfile: eve-log output device (regular) initialized: eve.json
+[1 - Suricata-Main] 2025-06-12 04:50:15 Warning: counters: stats are enabled but no loggers are active
+[1 - Suricata-Main] 2025-06-12 04:50:15 Warning: detect: No rule files match the pattern suricata.rules
+[1 - Suricata-Main] 2025-06-12 04:50:15 Warning: detect: 1 rule files specified, but no rules were loaded!
+[1 - Suricata-Main] 2025-06-12 04:50:15 Info: threshold-config: Threshold config parsed: 0 rule(s) found
+[1 - Suricata-Main] 2025-06-12 04:50:15 Info: detect: 0 signatures processed. 0 are IP-only rules, 0 are inspecting packet payload, 0 inspect application layer, 0 are decoder event only
+[12 - RX#01] 2025-06-12 04:50:15 Info: pcap: Starting file run for /var/lib/suricata/pcaps/sample.pcap
+[1 - Suricata-Main] 2025-06-12 04:50:15 Notice: threads: Threads created -> RX: 1 W: 4 FM: 1 FR: 1   Engine started.
+[12 - RX#01] 2025-06-12 04:50:15 Info: checksum: No packets with invalid checksum, assuming checksum offloading is NOT used
+[12 - RX#01] 2025-06-12 04:50:15 Info: pcap: pcap file /var/lib/suricata/pcaps/sample.pcap end of file reached (pcap err code 0)
+[1 - Suricata-Main] 2025-06-12 04:50:15 Notice: suricata: Signal Received.  Stopping engine.
+[1 - Suricata-Main] 2025-06-12 04:50:15 Info: suricata: time elapsed 0.208s
+[12 - RX#01] 2025-06-12 04:50:15 Notice: pcap: read 1 file, 39427 packets, 26128819 bytes
+[1 - Suricata-Main] 2025-06-12 04:54:14 Notice: suricata: This is Suricata version 7.0.10 RELEASE running in USER mode
+[1 - Suricata-Main] 2025-06-12 04:54:14 Info: cpu: CPUs/cores online: 4
+[1 - Suricata-Main] 2025-06-12 04:54:14 Info: suricata: Setting engine mode to IDS mode by default
+[1 - Suricata-Main] 2025-06-12 04:54:14 Info: suricata: No 'host-mode': suricata is in IDS mode, using default setting 'sniffer-only'
+[1 - Suricata-Main] 2025-06-12 04:54:14 Info: logopenfile: fast output device (regular) initialized: fast.log
+[1 - Suricata-Main] 2025-06-12 04:54:14 Info: logopenfile: eve-log output device (regular) initialized: eve.json
+[1 - Suricata-Main] 2025-06-12 04:54:14 Warning: counters: stats are enabled but no loggers are active
+[1 - Suricata-Main] 2025-06-12 04:54:14 Warning: detect: No rule files match the pattern suricata.rules
+[1 - Suricata-Main] 2025-06-12 04:54:14 Warning: detect: 1 rule files specified, but no rules were loaded!
+[1 - Suricata-Main] 2025-06-12 04:54:14 Info: threshold-config: Threshold config parsed: 0 rule(s) found
+[1 - Suricata-Main] 2025-06-12 04:54:14 Info: detect: 0 signatures processed. 0 are IP-only rules, 0 are inspecting packet payload, 0 inspect application layer, 0 are decoder event only
+[12 - RX#01] 2025-06-12 04:54:14 Info: pcap: Starting file run for /var/lib/suricata/pcaps/sample.pcap
+[1 - Suricata-Main] 2025-06-12 04:54:14 Notice: threads: Threads created -> RX: 1 W: 4 FM: 1 FR: 1   Engine started.
+[12 - RX#01] 2025-06-12 04:54:14 Info: checksum: No packets with invalid checksum, assuming checksum offloading is NOT used
+[12 - RX#01] 2025-06-12 04:54:14 Info: pcap: pcap file /var/lib/suricata/pcaps/sample.pcap end of file reached (pcap err code 0)
+[1 - Suricata-Main] 2025-06-12 04:54:14 Notice: suricata: Signal Received.  Stopping engine.
+[1 - Suricata-Main] 2025-06-12 04:54:14 Info: suricata: time elapsed 0.121s
+[12 - RX#01] 2025-06-12 04:54:14 Notice: pcap: read 1 file, 39427 packets, 26128819 bytes

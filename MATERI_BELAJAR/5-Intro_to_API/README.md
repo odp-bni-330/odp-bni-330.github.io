@@ -6,19 +6,22 @@ This beginner-friendly guide will help you understand what APIs are, using simpl
 
 ## 📘 Part 1: What is an API?
 
-### Simple Definition:
+### Simple Definition
+
 **API** = Application Programming Interface
 
 An API is a **messenger** that lets two software programs talk to each other and exchange data.
 
 ### Real-World Analogy: The Restaurant 🍽️
+
 - **You** = Customer  
 - **Menu** = Front-End (it can be mobile or web app)  
 - **Waiter** = API  
 - **Kitchen** = The system that processes the data (it includes service, repository and database)
 
 **Flow:**
-<img src="./images/diagram-what-is-an-api-postman-illustration.svg" alt="alt text" width="400" height="300">
+
+![diagram-what-is-an-api-postman-illustration](./images/diagram-what-is-an-api-postman-illustration.svg)
 
 1. You read the menu (understand what is available)  
 2. You give the order to the waiter (send an API request)  
@@ -35,11 +38,14 @@ You never interact directly with the kitchen — just like users don’t interac
 **[REST](https://restfulapi.net)** stands for **Representational State Transfer** — a set of rules for designing web services that allow systems to communicate over HTTP. So REST is simply just one of architecture styles for APIs. There are other architecture styles like [GraphQL](https://graphql.org/learn/), [gRPC](https://grpc.io), etc.
 
 A **RESTful API** is an API that follows REST principles. Key characteristics:
+
 - **Stateless**: Each API call must contain all the information the server needs.
 - **Uses HTTP methods**: GET, POST, PUT, DELETE.
 - **Uses URLs to access resources**.
 - **Can return different formats, typically JSON**.
-#### Common RESTful actions:
+
+### Common RESTful actions
+
 - `GET /users` → Get a list of users
 - `GET /users/123` → Get a specific user
 - `POST /users` → Create a new user
@@ -117,11 +123,13 @@ app.listen(PORT, () => {
 ## 🔄 Recap & Hands-On Projects
 
 ### Recap
+
 - APIs let software communicate.
 - You can think of them like waiters in a restaurant.
 - They hide complexity and return only what you ask for.
 
 ### Hands-On Projects
+
 I already provided a more complex example of a RESTful API using Node.js, and it's included in this repository. The project implemented JWT authentication, CRUD operations, CI/CD by using GitHub Actions, and deployed it to AWS. Furthermore, you can test the API using [Postman](https://www.postman.com/solar-satellite-244046/cisnux/request/wqris37/add-user-with-valid-payload).
 
 ---

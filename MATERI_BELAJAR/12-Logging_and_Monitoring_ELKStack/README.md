@@ -5,14 +5,15 @@
 
 **API** (Application programming interface) : aturan / jembatan antar aplikasi _software_ berkomunikasi.
 
-contoh : 
+contoh :
+
 - Tokopedia pakai API untuk cek status pembayaran.
 - Gojek pakai API untuk dapat peta dan informasi harga.
 
 _mengapa API perlu diamankan?_ API bisa memuat data sensitif seperti personal user information, payment detail, private message.
 
-
 **OWASP API Security Top 10**:
+
 - API1:2023 - Broken Object Level Authorization
 - API2:2023 - Broken Authentication
 - API2:2023 - Broken Authentication
@@ -24,50 +25,59 @@ _mengapa API perlu diamankan?_ API bisa memuat data sensitif seperti personal us
 - API9:2023 - Improper Inventory Management
 - API10:2023 - Unsafe Consumption of APIs
 
-
 ## API1:2023 : BOLA
+
 - exploit API endpoints that are vulnerable to broken object-level authorization by manipulating the ID of an object that is sent within the request
 
 contoh:
+
 1. `/shops/{shopName}/revenue_data.json`. Using another API endpoint, the attacker can get the list of all hosted shop names. With a simple script to manipulate the names in the list, replacing `{shopName}` in the URL, the attacker gains access to the sales data of thousands of e-commerce stores.
 
 Pencegahan:
+
 - mekanisme otorisasi yang berlandaskan user policy dan hierarchy
 - lebih baik menggunakan GUID yang random dan tak terprediksi
 - buat test untuk evaluasi kerentanan mekanisme otorisasi.
 
 ### Fuzz Testing
-tools : 
+
+tools :
+
 - JMeter
 - OWASP Zap (Zapproxy)
 
 dapat melakukan simulasi seakan-akan yang login satu juta orang secara bersamaan.
 
-**Excessive Data Exposure**
+#### Excessive Data Exposure
+
 - attacker bisa analisis API response dgn tools seperti browser dev tools, ZAP, dll.
 - failure of UU PDP compliance.
 
-**Broken Authentication**
+#### Broken Authentication
+
 contoh penyerangan:
+
 - brute force
 - credential stuffing
     attacker menggunakan tools otomatis untuk mencoba ribuan kombinasi username/password
 
 contoh kesalahan:
+
 - credential yang lemah
 - tidak ada _rate-limiting_ terhadap percobaan login
 - menunjukkan session token di URL
 - MFA tdk ada.
 
-**Injection Attack**
+### Injection Attack
 
+## Demo Fuzz Testing
 
-# Demo Fuzz Testing
 > 📁 File Projek terkait:
 `/handson/connect-oracle-db-token/`
 `/handson/zp_fuzz_test/`
 
 **Langkah 0** : Jalankan server dan DB yang dibuat di day-11 (connect-oracle-DB)
+
 ```bash
 # pindah ke folder project connect-oracle-DB, lalu:
 ./mvnw spring-boot:run      # menyalakan server
@@ -82,12 +92,14 @@ docker exec -it oracle-xe sqlplus bostang/password@localhost:1521/XEPDB1
 **Langkah 1** : Atur proxy setting di Postman dan juga OWASP ZAP
 
 contoh setting:
-```
+
+```setting
 spring-boot : port 8080
 owasp-zap : port 8081
 postman : port 8081
 ```
-```
+
+```setting
 spring-boot : port 8081
 owasp-zap : port 8082
 postman : port 8082
@@ -107,7 +119,6 @@ lalu amati pada ZAP:
 
 ![tampilan-ZAP-langkah2](./img/tampilan-ZAP-langkah2.png)
 
-
 attack Fuzz:
 
 ![attack-Fuzz-1](./img/attack-Fuzz-1.png)
@@ -122,8 +133,8 @@ Pada menu alert, OWASP Zap juga memberikan rekomendasi apa yang perlu diperbaiki
 
 ![alert-perbaikan](./img/alert-perbaikan.png)
 
-
-# Challenge : Menambahkan token JWT
+## Challenge : Menambahkan token JWT
+>
 > 📁 File Projek terkait:
 `/handson/connect-oracle-db-token/` → File saya
 `/handson/spring-boot-oracle-db-token/` → File hasil _fork_ dari _repo_ Instruktur
@@ -135,10 +146,11 @@ Menggunakan token dan buat endpoint untuk identifikasinya.
 - extract isi data di dalam token
 
 ## Implementasi
+
 ada di : `/handson/connect-oracle-db-to-oracle-token`
 
-
 ## Pengujian
+
 **Langkah 1**: Register
 ![testing-register](./img/testing-register.png)
 
@@ -152,7 +164,7 @@ ada di : `/handson/connect-oracle-db-to-oracle-token`
 `/spring-boot-oralce-db-token`
 ![testing-validate-2](./img/testing-validate-2.png)
 
-# Logging & Monitoring
+## Logging & Monitoring
 
 ELK Stack
 
@@ -161,6 +173,7 @@ ELK Stack
 - Kibana : data visualization tool
 
 → memungkinkan kita untuk :
+
 - mengumpulkan log dari berbagai sumber (API, server, DB)
 - simpan & cari log dgn efisien
 - visualisasikan log scr/ real time
@@ -170,13 +183,16 @@ ELK Stack
 > 📁 File Projek terkait: `/handson/connect-oracle-db-token-elk`
 
 ### Cara Menjalankan Server
+
 1. Pindah ke direktori
 2. Jalankan pada terminal:
+
 ```bash
 ./mvnw spring-boot:run
 ```
 
 ### Cara Menghidupkan DB
+
 ```bash
 docker ps -a            # menampilkan nama docker container (semua, termasuk yang in-active)
 
@@ -191,7 +207,9 @@ docker exec -it oracle-xe sqlplus bostang/password@localhost:1521/XEPDB1
 ### Cara Monitor Log dengan ELK Stack
 
 ### Cara Hubungkan Aplikasi Springboot dengan ELK Stack
+
 **Langkah 1** : Tambah dependency ke `pom.xml`:
+
 ```xml
 <!-- Logstash Logback Encoder -->
 <dependency>
@@ -239,6 +257,7 @@ buat di `/resources/logback-spring.xml`:
 
 **Langkah 3** : Tambahkan bagian logging di controller
 `/controller/AuthController.java`
+
 ```java
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -262,7 +281,9 @@ public class AuthController {
 ```
 
 ### Menghidupkan ELK Stack (jalan di Docker)
+
 **Langkah 1**: Buat `docker-compose-elk.yml`
+
 ```yml
 version: '3.8'
 
@@ -314,11 +335,13 @@ networks:
 ```
 
 **Langkah 2**: Buat Konfigurasi Logstash
+
 ```bash
 mkdir logstash-config
 ```
 
 Isi `logstash-config/logstash.conf`:
+
 ```conf
 input {
   tcp {
@@ -358,6 +381,7 @@ output {
 ```
 
 **Langkah 3** : Jalankan ELK stack
+
 ```bash
 docker-compose -f docker-compose-elk.yml up
 ```
@@ -365,9 +389,10 @@ docker-compose -f docker-compose-elk.yml up
 > Catatan : ketika pertama kali jalan, butuh minimal 2 menit agar ELK bisa berjalan mulus sehingga localhost:5601 dapat diakses
 
 **Langkah 4** : Buat Dashboard Kibana
+
 - **4.1** : Akses `http://localhost:5601`
-- **4.2** : Nyalakan aplikasi springboot (pada terminal : `./mvnw spring-boot:run`) 
-- **4.2**: Buat Index Pattern 
+- **4.2** : Nyalakan aplikasi springboot (pada terminal : `./mvnw spring-boot:run`)
+- **4.2**: Buat Index Pattern
 pattern : `springboot-logs-*` , pilih `@Timestamp`, pilih `Create Index pattern`
 
 - **4.3** : Test kirim request lewat Postman lalu amati log di `http://localhost:5601/app/discover`
@@ -381,8 +406,10 @@ pattern : `springboot-logs-*` , pilih `@Timestamp`, pilih `Create Index pattern`
 
 ![tampilan-pada-log-terminal](./img/tampilan-pada-log-terminal.png)
 
-#### Catatan Tambahan:
+#### Catatan Tambahan
+
 Untuk memberhentikan ELK stack yang jalan di docker:
+
 ```bash
 docker-compose -f docker-compose-elk.yml down
 # atau

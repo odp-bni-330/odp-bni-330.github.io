@@ -2,6 +2,7 @@
 <!-- Mei 2025 -->
 
 # Spring
+
 Spring ➡️ _framework_
 
 - akan menyusun sendiri struktur foldernya
@@ -10,9 +11,11 @@ Spring ➡️ _framework_
   ➡️developer dapat fokus ke mengembangkan fitur, bukan setup project.
 
 ## Fitur Springboot
+
 ![fitur-springboot](./img/fitur-springboot.png)
 
 ## Layered Architecture
+
 ![layered-architecture](./img/layered-architecture.png)
 
 Springboot mengikuti _layered architecture_:
@@ -26,13 +29,13 @@ Springboot mengikuti _layered architecture_:
   ➡️ repository classess
 
 Fungsi **controller**:
+
 - terima input
 - validasi input
 
-
 contoh flow: spring boot MVC web app w/ Thymeleaf (frontend/client)
 
-```
+```diagram
 Browser ➡️(1) employee controller ➡️(2) employee service ➡️(3) employee repository ↔️(4) DB (model)
                     ↩️(5)
 ```
@@ -52,7 +55,7 @@ alur interaksi user dari depan (_controller_), namun implementasi / _development
 - repositiory classes
   ➡️CRUD f/ DB, abstracting low-level detail for cleaner code
 
-#### Springboot annotation
+### Springboot annotation
 
 ![springboot-annotation](./img/springboot-annotation.png)
 
@@ -61,31 +64,32 @@ alur interaksi user dari depan (_controller_), namun implementasi / _development
 Menggunakan fitur **Code Generator (Java)** di VSCode:
 ![code-generator-for-java](./img/code-generator-for-java.png)
 
-
 ## Tahapan Membuat Project
-1. BUKA [start.spring.io](start.spring.io)
+
+**Langkah 1**. BUKA [start.spring.io](start.spring.io)
 
 ![tampilan-start-spring-io](./img/tampilan-start-spring-io.png)
 
-2. Konfigurasi Proyek
+**Langkah 2**. Konfigurasi Proyek
 ![konfigurasi-proyek](./img/konfigurasi-proyek.png)
 
 `group` : biasanya nama _company_.
 `artifact` : fitur yang mau diimplementasikan.
 
-3. Tambahkan _dependencies_ yang dibutuhkan
+**Langkah 3**. Tambahkan _dependencies_ yang dibutuhkan
 
 ![dependencies-spring-web](./img/dependencies-spring-web.png)
 
-4. klik **generate**, maka akan mendownload sebuah file `.zip`'
+**Langkah 4**. klik **generate**, maka akan mendownload sebuah file `.zip`'
 
-5. jalankan perintah running
+**Langkah 5**. jalankan perintah running
 
 ```bash
 ./mvnw clean install
 ```
 
 **_common issues_** :
+
 1. di langkah 1, masih memilih `Gradle - Groovy` alih-alih `Maven`
 2. Memilih versi Java yang tidak sesuai
 ➡️pastikan ketika di langkah 1, memilih versi Java sesuai yang kita punya
@@ -100,6 +104,7 @@ Menggunakan fitur **Code Generator (Java)** di VSCode:
 atur `JAVA_HOME` di environment variabel, tambahkan `%JAVA_HOME%\bin` ke path.
 
 ## Menambahkan Dependency setelah Project sudah dibuat
+
 modifikasi `pom.xml`
 
 ![menambahkan-dependency](./img/menambahkan-dependency.png)
@@ -110,17 +115,17 @@ modifikasi `pom.xml`
 
 ![struktur-file](./img/struktur-file.png)
 
+## Tahapan Menjalankan Aplikasi
 
-# Tahapan Menjalankan Aplikasi
-0. Buat project (dengan bantuan `Spring Initializr`)
-1. modifikasi `~/src/main/`
-3. kompilasi  dengan :
+**Lankgah 0**. Buat project (dengan bantuan `Spring Initializr`)
+**Lankgah 1**. modifikasi `~/src/main/`
+**Lankgah 2**. kompilasi  dengan :
 
 ```bash
 ./mvnw clean install
 ```
 
-4. jalankan dengan:
+**Langkah 3**. jalankan dengan:
 
 ```bash
 ./mvnw spring-boot:run
@@ -132,8 +137,8 @@ port 8080 sudah terpakai
 **solusi** : ubah port di `application.properties`
 ![ubah-port](./img/ubah-port.png)
 
-
 ## HTTP CLient Extension VSCode
+
 Percobaan _send request_ dapat dilakukan pada VScode dengan menggunakan extension : `HTTP Client`
 ![percobaan-send-request](./img/percobaan-send-request.png)
 
@@ -145,9 +150,11 @@ alternatif lain : Menggunakan `Postman`.
 >💡 Tips : `ctrl + [CLICK]` garis bawah merah error lalu _quick fix_ > _add all missing import_
 
 ![quick-fix-add-all-missing-import](./img/quick-fix-add-all-missing-import)
+
 ---
 
-# Catatan Tambahan
+## Catatan Tambahan
+
 |                         **Annotation**                         |                                                   **Short Desc.**                                                   |
 |:--------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|
 | `@SpringBootApplication`                                       | bootstrap a Spring Boot application. combines : `@Configuration`, `@EnableAutoConfiguration`, and `@ComponentScan`. |

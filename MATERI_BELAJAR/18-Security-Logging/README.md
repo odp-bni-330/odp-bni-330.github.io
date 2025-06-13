@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # Security
 
 > pemateri : Kelvin Desman
@@ -408,6 +411,10 @@ Alternatif ELK :
 
 > file : /handson/elk-example
 
+![ELK-stack-1](./img/ELK-stack-1.png)
+
+![ELKs-stack-2](./img/ELKs-stack-2.png)
+
 **Langkah 1** : Buat struktur file
 
 ```tree
@@ -684,3 +691,6 @@ Access token ini digunakan untuk mengakses API (misal: data user, email) sesuai 
      | 6. Data returned                        |
      |<----------------------------------------|
 ```
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

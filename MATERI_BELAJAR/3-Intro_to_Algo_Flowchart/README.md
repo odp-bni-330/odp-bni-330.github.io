@@ -8,6 +8,7 @@
 ![synchronous-asynchronous](./img/synchronous-asynchronous.png)
 
 ## Asynchronous
+
 - Call stack
 - Web APIs
 - Callback Queue
@@ -18,29 +19,37 @@ asynchronous ➡️ masuk ke web APIs dulu.
 asynchronous jangan return ➡️ karena jalannya nanti ➡️ manfaatkan callback.
 
 cara deklarasi function:
+
 - anonymous
+
 ```js
 function(parameter){
     ...
 }
 ```
+
 - declaration
+
 ```js
 function nama_fungsi(parameter){
     ...
 }
 ```
+
 - arrow function
+
 ```js
 (parameter)=>{
     ...
 }
 ```
 
-# Introduction to Algorithm & Flowchart
+## Introduction to Algorithm & Flowchart
+
 Algoritma : langkah logis & sistematis u/ solving problem.
 
 **struktur algoritma**:
+
 1. input
 2. output
 3. definiteness
@@ -48,6 +57,7 @@ Algoritma : langkah logis & sistematis u/ solving problem.
 5. efectiveness
 
 **Cara penyajian** :
+
 1. flowchart
 2. Pseudocode
 
@@ -57,7 +67,8 @@ Algoritma : langkah logis & sistematis u/ solving problem.
 
 contoh pseudocode : notasi algoritmik
 
-1. cek ganjil/genap
+**contoh 1**. cek ganjil/genap
+
 ```java
 PROGRAM cekGanjilGenap
     mengecek apakah suatu bilangan masukan x itu ganjil atau genap
@@ -75,7 +86,8 @@ ALGORITMA
     output  (x)
 ```
 
-2. berangkat ke kantor
+**contoh 2**. berangkat ke kantor
+
 ```java
 PROGRAM berangkatKantor
     Menggambarkan langkah logis dan sistematis yang diambil untuk berangkat dari rumah ke kantor.
@@ -117,14 +129,19 @@ ALGORITMA
     jalanKakikeKantor()
     END
 ```
+
 ## Sorting Algorithm
+
 ### Bubble sort
+
 ![bubble-sort](./img/bubble-sort.png)
 
 ### Selection sort
+
 ![selection-sort](./img/selection-sort.png)
 
 ## Searching Algorithm
+
 ### Linear Search
 
 ![linear-search](./img/linear-search.png)
@@ -135,31 +152,37 @@ ALGORITMA
 
 ![binary-search](./img/binary-search.png)
 
-# Data Structure : Array & Object
+## Data Structure : Array & Object
+
 object ➡️ dapat dideskripsikan. dapat menyimpan banyak value.
 
 terdiri atas pasangan key-value
 
-# Problem solving dengan algoritma
-## Algoritma
-## Debugging
+## Problem solving dengan algoritma
+
+### Algoritma
+
+### Debugging
 
 bug-tracing.
 
 broken windows ➡️ segera patch.
 
 **contoh**:
+
 1. hasil code tdk sesuai ekspektasi
 2. muncul error
 3. program tdk jalan sama sekali
 4. infinite loop
 
 **Alat debugging**:
+
 1. print setiap proses (`console.log`)
 2. devTools browser
 3. baca dokumentasi
 
 ## Optimization
+
 membuat kode lebih cepat dan efisien
 
 1. algoritma yg efisien
@@ -168,8 +191,8 @@ membuat kode lebih cepat dan efisien
 4. modular function
 5. refactor bertahap
 
+## Referensi Tambahan
 
-# Referensi Tambahan
 [Visualisasi Algoritma sorting](https://visualgo.net/en/sorting)
 
 ---

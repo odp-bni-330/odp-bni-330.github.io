@@ -1,0 +1,6 @@
+projectKey=ddos-example
+serverUrl=http://localhost:9000
+serverVersion=25.6.0.109173
+dashboardUrl=http://localhost:9000/dashboard?id=ddos-example
+ceTaskId=10323b01-e906-4fde-9914-f5944a02b520
+ceTaskUrl=http://localhost:9000/api/ce/task?id=10323b01-e906-4fde-9914-f5944a02b520

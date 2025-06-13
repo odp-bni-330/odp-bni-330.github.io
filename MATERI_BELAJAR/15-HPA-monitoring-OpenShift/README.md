@@ -5,29 +5,31 @@
 <!-- Juni 2025 -->
 
 # Horizontal Pod Autoscaller (HPA)
+
 Scaling concept
 HPA configuration
 Automated scalability
-    
-![vertical-vs-horizontal-scaling](./img/vertical-vs-horizontal-scaling.png)
 
+![vertical-vs-horizontal-scaling](./img/vertical-vs-horizontal-scaling.png)
 
 _vertical scaling_ -> untuk melakukan komputasi matematis yang lebih berat seperti DeepLearning.;
 _horizontal scaling_ -> untuk melakukan komputasi yang banyak (_concurrent_) misalkan transaksi ketika _high traffic_.
 
-# Hands-on : Horizontal Pod Autoscaller (HPA)
+## Hands-on : Horizontal Pod Autoscaller (HPA)
 
 > file : `/handson/demo-openshift-hybrid-cloud.zip`
 
-## Cara 1 : Web-based GUI
+### Cara 1 : Web-based GUI
+
 ![web-based-set-autoscaler](./img/web-based-set-autoscaler.png)
 
 Verifikasi HPA sudah diatur :
 ![verifikasi-HPA-telah-diatur](./img/verifikasi-HPA-telah-diatur.png)
 
+### Cara 2 : CLI
 
-## Cara 2 : CLI
 **2.1** Set Limit resources
+
 ```bash
 oc set resources deployment java-bni-project-git \
   --requests=cpu=200m,memory=512Mi \
@@ -35,6 +37,7 @@ oc set resources deployment java-bni-project-git \
 ```
 
 **2.2** Set HPA
+
 ```bash
 oc autoscale deployment java-bni-project-git \
   --min=1 --max=5 \
@@ -42,28 +45,33 @@ oc autoscale deployment java-bni-project-git \
 ```
 
 **2.3** Verifikasi / Cek Detail
+
 ```bash
 oc get hpa
 
-# lihat detail
+## lihat detail
 oc describe hpa [nama_deployment]
 ```
 
-# Monitoring & Logging
+## Monitoring & Logging
+
 manfaat :
+
 - deteksi isu secara dini sebelum berdampak pada user
 - memahami trend performa dan _bottleneck_ sumnber daya.
 - investigasi dan debug kegagalan / perilaku abnormal.
 
 <!-- `Prometheus` , `ElasticSearch stack` -->
 
-OpenShift Monitoring : menggunakan 
-  - `Prometheus` : _scrap_ _metrics_ dari `pods` dan `services`
-  - `Alertmanager` : kirim _alert_ lewat email, slack
-  - `Grafana` : visualisasi dashboard
+OpenShift Monitoring : menggunakan
+
+- `Prometheus` : _scrap_ _metrics_ dari `pods` dan `services`
+- `Alertmanager` : kirim _alert_ lewat email, slack
+- `Grafana` : visualisasi dashboard
    untuk kumpulkan dan visualisasi _metrics_ dari nodes, pods, dan aplkasi.
 
 _metrics_:
+
 - CPU & memory usage
 - pod restarts
 - HTTP request rate & latency
@@ -75,7 +83,7 @@ oc explain application
 oc explain service
 ```
 
-**Melihat pod metrics**
+### Melihat pod metrics
 
 Dgn web console:
 > Observe > Metrics
@@ -83,16 +91,19 @@ Dgn web console:
 ![observe-metrics-web-console](./img/observe-metrics-web-console.png)
 
 Dgn CLI :
+
 ```bash
 oc adm top pods
 oc adm top nodes
 ```
 
-**Baca Log**
+### Baca Log
+
 Dgn web console:
 > Pod > clock "logs"
 
 Dgn CLI :
+
 ```bash
 oc get pods
 oc logs -f [pod-name]     
@@ -108,11 +119,12 @@ Setelah mengubah _source code_, build lagi.
 
 ![start-build](./img/start-build.png)
 
-**Cara build ulang via CLI**
+### Cara build ulang via CLI
+
 ```bash
-# sintaks :
-#   oc start-build [nama-built-config] --follow
-# cek di `oc get bc` (built-config)
+## sintaks :
+##   oc start-build [nama-built-config] --follow
+## cek di `oc get bc` (built-config)
 oc start-build demo-openshift-hybrid-cloud --follow
 ```
 
@@ -122,40 +134,45 @@ setelah selesai build, coba lagi kirim _request_ via postman:
 
 perhatikan bahwa _message_ ada di _response_.
 
-**Cara **
-**Langkah 0:: Lihat nama build config**
+**Langkah 0**: Lihat nama build config
+
 ```bash
 oc get bc
 ```
 
-**Langkah 1: generate secret key**
+**Langkah 1**: generate secret key
+
 ```bash
-# sintaks :
-  # oc get bc [nama-build-config] -o jsonpath="{.spec.triggers[?(@.type=='GitHub')].github.secret}"
+## sintaks :
+  ## oc get bc [nama-build-config] -o jsonpath="{.spec.triggers[?(@.type=='GitHub')].github.secret}"
 
 oc get bc demo-openshift-hybrid-cloud -o jsonpath="{.spec.triggers[?(@.type=='GitHub')].github.secret}"
 
-# maka akan didapat kode `secret`
-  # misal : sIIfsy_w38yDk4vR7CUa
-  # secret akan dipakai untuk URL Webhook
+## maka akan didapat kode `secret`
+  ## misal : sIIfsy_w38yDk4vR7CUa
+  ## secret akan dipakai untuk URL Webhook
 ```
 
-**Langkah 2: lihat URL webhook Github**
+**Langkah 2**: lihat URL webhook Github
+
 ```bash
-# Lihat URL Webhook Generic & Webhook Github
-# sintaks :
-  # oc describe bc [nama-build-config]
+## Lihat URL Webhook Generic & Webhook Github
+## sintaks :
+  ## oc describe bc [nama-build-config]
 
 oc describe bc demo-openshift-hybrid-cloud
 
-# contoh:
-  # Webhook GitHub:
-	# URL:	https://api.rm1.0a51.p1.openshiftapps.com:6443/apis/build.openshift.io/v1/namespaces/bostang-dev/buildconfigs/demo-openshift-hybrid-cloud/webhooks/<secret>/github
+## contoh:
+  ## Webhook GitHub:
+ ## URL: https://api.rm1.0a51.p1.openshiftapps.com:6443/apis/build.openshift.io/v1/namespaces/bostang-dev/buildconfigs/demo-openshift-hybrid-cloud/webhooks/<secret>/github
 
 ```
 
-**Langkah 3: Add web hook di github**
-> Buka repository github > Settings > Webhooks > Add Webhook
+**Langkah 3**: Add web hook di github
+
+```method
+Buka repository github > Settings > Webhooks > Add Webhook
+```
 
 > masukkan payload URL, content type: application/json, secret
 
@@ -163,21 +180,22 @@ Namun untuk kasus ini, proses webhook akan selalu gagal (karena OpenShift yang d
 
 ![webhook-gagal-openshift-free](./img/webhook-gagal-openshift-free.png)
 
+## Troubleshooting Deployment
 
-# Troubleshooting Deployment
 OpenShift Error, Debugging Failed Deployments
 
 Tujuan : Ketika deployment gagal, tahu harus lihat/cek ke mana untuk mengurangi _down time_.
 
 Contoh permasalahan yang sering muncul:
+
 - Image pull error (`ImagePullBackOff`, `ErrImagePuull`)
 - `CrashLoopBackOff` : Pod mulai kemudian _crash_ secara berulang
 - Container exit codes (misal : code `1`, `137`, `143`)
 - Kegagalan Readiness / Liveness Probe
 - _Resources_ yang tidak cukup (memory/CPU)
 
-
 **Tools untuk Troubleshooting**:
+
 - `oc get pods`
 - `oc describe pod <name>`
 - `oc logs <pod>`
@@ -185,11 +203,12 @@ Contoh permasalahan yang sering muncul:
 - Web console
 - Pahami _error message_.
 
-# Hands-on : Pengujian Repeating request
+## Hands-on : Pengujian Repeating request
 
 >file : `/handson/demo-openshift-hybrid-cloud.zip`
 
-## Dengan Shell Script
+### Dengan Shell Script
+>
 > `continuous_request_api.sh`
 
 ![testing-dengan-shell-script](./img/testing-dengan-shell-script.png)
@@ -200,8 +219,9 @@ Administrator > Workloads > Deployment > Metrics
 Administrator > Workloads > Deployment > HorizontalPodAutoscaler
 ![tampilan-persentase-utilization-HPA](./img/tampilan-persentase-utilization-HPA.png)
 
-## Testing dengan ApacheJMeter
-### Cara Andrew
+### Testing dengan ApacheJMeter
+
+#### Cara Andrew
 
 **Langkah 1** : Tambah **Thread Group**
 > Klik kanan `test plan` > add > Threads > Thread Group
@@ -241,7 +261,6 @@ Atur http header : `Content-Type` : `application/json`
 **Langkah 6** : Jalankan Test
 Tekan tomnbol play (hijau) lalu amati _result tree_ dan _summary report_.
 
-
 ![cek-hasil-result-tree](./img/cek-hasil-result-tree.png)
 
 ![cek-hasil-summary-report](./img/cek-hasil-summary-report.png)
@@ -257,12 +276,13 @@ Templates > Building web test plan
 ![konfigurasi-thread-group](./img/konfigurasi-thread-group.png)
 -->
 
-# Tugas: Springboot app dengan Kolom paru pada Tabel
+## Tugas: Springboot app dengan Kolom paru pada Tabel
 
 > file : `/handson/opensfhit-springboot-app.zip`
 
 Update tabel `user` menjadi:
-```
+
+```list
 id
 username
 email_address
@@ -273,9 +293,9 @@ password_hash
 role
 ```
 
-**Langkah 0 : Update Kode Sumber**
+**Langkah 0** : Update Kode Sumber
 
-**Langkah 1: Buat repository secrets**
+**Langkah 1**: Buat repository secrets
 
 > Settings > Secret and Variables > Actions > Repository Secrets
 
@@ -293,15 +313,16 @@ pastikan pada `main.yaml` `repository` sama : `main` atau `master`.
 
 **Langkah 2 : Buat `main.yml`**
 buat `main.yml` di :
-```
+
+```directory
 .github/workflows/main.yml
 ```
 
-**Langkah 3 : Tunggu hingga build selesai**
+**Langkah 3** : Tunggu hingga build selesai
 
 > Buka Github > Actions > All workflows
 
-**Langkah 5 : Testing dengan Postman**
+**Langkah 5** : Testing dengan Postman
 
 Testing
 ![testing_register_tugas](./img/testing_register_tugas.png)
@@ -310,11 +331,12 @@ Testing
 
 ![pengamatan-pada-database-dashboard](./img/pengamatan-pada-database-dashboard.png)
 
-# Catatan Tambahan
+## Catatan Tambahan
+
 **Virtualization vs Containerization**
 ![container-vs-virtual-machine](./img/container-vs-virtual-machine.png)
 
-**Versioning**
+### Versioning
 
 `X.Y.Z`
 

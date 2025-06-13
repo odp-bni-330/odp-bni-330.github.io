@@ -1,28 +1,31 @@
 <!-- Dirangkum oleh : Bostang Palaguna -->
 <!-- Mei 2025 -->
 
+# Secure coding (DevSecOps)
+
 > fasilitator : Febrian Aditya
 
-# Secure coding
 ## Front-end vs Back-end
 
-**frontend**
+### frontend
+
 - dilihat user.
 - ui/ux.
 - translate design figma ke codingan.
 
-**backend**
+### backend
+
 - logika, proses data
 - optimize server
 - request/respond data
 - DB
 
 _Tech stack_:
-- Front end
-    - HTML, CSS, Bootstrap, Rreact, Angular, Vue
-- Back end
-    - docker, django, nodeJS, mongoDB, mySQL, expressjs, laravel, spring, typescript
 
+- Front end
+  - HTML, CSS, Bootstrap, Rreact, Angular, Vue
+- Back end
+  - docker, django, nodeJS, mongoDB, mySQL, expressjs, laravel, spring, typescript
 
 client-side ➡️ tanggung jawab FE
 server-side ➡️ BE.
@@ -39,6 +42,7 @@ customer    ↔️   HTML,CSS,JS     ↔️     JS (server-side)  ↔️    data
 ## Struktur Web
 
 jenis web :
+
 1. statis
     konten tetap, tidak berubah
     e.g. landing page sederhana
@@ -58,7 +62,8 @@ Server: proses data & logic
 DB : data
 
 foldering standard:
-```
+
+```dir
 ./index.html
 ./script.js
 ./style.css
@@ -79,6 +84,7 @@ analogi :
     CSS : kulit
 
 Web developer workflow:
+
 1. planning
 2. setup project
 3. coding
@@ -91,9 +97,9 @@ Web developer workflow:
 ## Secure coding
 
 poin penting HTML:
+
 1. dibaca dari atas ke bawah dan kiri dan kanan
-2. 
-3. self-closing (tag elemen void) ➡️ <img> , <br>
+2. self-closing (tag elemen void) ➡️ `<img>` , `<br>`
 
 inspect element dari developer tools browser
 
@@ -103,15 +109,17 @@ inspect element dari developer tools browser
 
 ![istilah-elemen](./img/istilah-elemen.png)
 
-### atribut yang umum:
+### atribut yang umum
+
 - `id`  ➡️ identifikasi **unik** elemen.
 - `class` ➡️ kelompok styling menggunakan css.
 - `style` ➡️ styling langsung di elemen.
 - `type` ➡️ u/ input tag.
-- `src & alt` ➡️ u/ image tag, 
+- `src & alt` ➡️ u/ image tag,
 - `href, target & rel` ➡️ untuk anchor tag, navigasi tautan, membuat di tab baru
 
 ## specificity table
+
 ![specificity-hierarchy](./img/specificity-hierarchy.png)
 
 ```html
@@ -122,7 +130,8 @@ inspect element dari developer tools browser
 ```
 
 ## styling css
-_cascading style sheet_
+
+CSS : _cascading style sheet_
 
 - selector
 - property
@@ -136,14 +145,16 @@ body {
 }
 ```
 
-### metode :
+### metode
+
 - **inline**
     di satu elemen (tag pembuka)
 - **internal**
     di satu file, di tag head, ada tag style
 - **external**
 
-### jenis selektor:
+### jenis selektor
+
 - tag selector (`tag{}`)
 - class selector (`.class{}`)
 - id selector (`#id{}`)
@@ -151,12 +162,13 @@ body {
 ![css-elements](./img/css-elements.png)
 
 ## old-school styling
+
 - old-school
 - flexbox
 - grid system
 
-
 ### position
+
 - _static_
 - _relative_
 - _fixed_
@@ -167,34 +179,39 @@ body {
 - **padding** : sisi dalam
 
 ### value dan unit
-- relative
-    - `%` : relatif thd parent element
-- absolut
-    - `px`
-    - `cm`
-    - `mm`
-    - `in`
-    - `pt` (point = 1/72in)
 
+- relative
+  - `%` : relatif thd parent element
+- absolut
+  - `px`
+  - `cm`
+  - `mm`
+  - `in`
+  - `pt` (point = 1/72in)
 
 ## Bootstrap
+
 _framework_ CSS / aturan siap pakai (class & komponen) u/ bantu developer lebih mudah penataan layout.
 
 cara pakai:
+
 - **LANGKAH 1** : add `cdn bootstrap` di tag `head`
 - **LANGKAH 2** : add `cdn popper` di tag `body` sebelum closing tag `body`
 - **LANGKAH 3** : coba _copy_ component yg ada di [bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
 ## grid theory
+
 grid pada bootstrap : sistem layout 12 kolom
-```
+
+```struc
 <------------------------------- span 12 ------------------------------>
 <------------- span 6 ------------><------------- span 6 -------------->
 <------- span 4 -------><------- span 4 -------><------- span 4 ------->
 ...
 ```
 
-# Referensi Tambahan
+## Referensi Tambahan
+
 - [perbedaan XML dan JSON](https://www.geeksforgeeks.org/difference-between-json-and-xml/)
 - [single page application](https://www.geeksforgeeks.org/what-is-single-page-application/)
 - [web versioning](https://www.geeksforgeeks.org/web-1-0-web-2-0-and-web-3-0-with-their-difference/)

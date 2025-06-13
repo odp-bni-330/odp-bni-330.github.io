@@ -17,6 +17,7 @@ Docker : untuk menampung 1 _container_
 Kubernetes : untuk orkestrasi banyak _container_
 
 **Mengapa menggunakan Openshift?**
+
 - aman
     → RBAC, SCC, _image scanning_, _network policies_
 - ↑ produktivitas developer
@@ -28,6 +29,7 @@ Kubernetes : untuk orkestrasi banyak _container_
 
 **Arsitektur OpenShift Cluster**
 komponen:
+
 - control plane / master nodes
     jalankan API server, scheduler, controller manager.
 - worker nodes
@@ -37,7 +39,7 @@ komponen:
 
 ![arsitektur-openshift](./img/arsitektur-openshift.png)
 
-# Hands-on OpenShift
+## Hands-on OpenShift
 
 - Akses [Developer SandBox](https://developers.redhat.com/developer-sandbox)
 - Buat akun
@@ -57,23 +59,26 @@ Pengujian kirim request dengan postman :
 ![testing-request-dengan-postman](./img/testing-request-dengan-postman.png)
 
 ## Langkah menggunakan OpenShift Client (`oc`) terminal
-1. download [openshift client terminal](https://developers.redhat.com/learning/learn:openshift:download-and-install-red-hat-openshift-cli/resource/resources:download-and-install-oc)
+
+**langkah 1.** download [openshift client terminal](https://developers.redhat.com/learning/learn:openshift:download-and-install-red-hat-openshift-cli/resource/resources:download-and-install-oc)
 ![download-oc-terminal](./img/download-oc-terminal.png)
 
-2. copy login command dari dashboard openshift virtual sandbox
+**langkah 2.** copy login command dari dashboard openshift virtual sandbox
 ![copy-login-command](./img/copy-login-command.png)
 
 maka akan diperoleh token yang nantinya akan dimasukkan ke terminal
 ![maka-didapatkan-token](./img/maka-didapatkan-token.png)
 
-3. masukkan token pada `oc` terminal yang sudah di-download.
+**langkah 3.** masukkan token pada `oc` terminal yang sudah di-download.
+
 ```bash
 oc login --token=[TOKEN] --server=https://api.rm1.0a51.p1.openshiftapps.com:6443
 ```
 
 ![cek-pods-yang-running-setelah-request-postman](./img/cek-pods-yang-running-setelah-request-postman.png)
 
-4. cek versi `oc` dan juga lihat daftar pod yang ada
+**langkah 4.** cek versi `oc` dan juga lihat daftar pod yang ada
+
 ```bash
 # Cek versi openshift client
 oc version
@@ -85,13 +90,15 @@ oc get pods
 
 Salah satu fitur dari Kubernetes (yang juga ada di OpenShift) adalah _autoscaling_ yaitu jumlah pod bisa diperbanyak sesuai dengan _load_ yang meningkat.
 
-# Hands-on Openshift (project sebelumnya dengan PostgreSQL)
+## Hands-on Openshift (project sebelumnya dengan PostgreSQL)
+
 **Langkah 1** : Buat folder `.yaml` untuk PostgreSQL. Kemudian buat file-filenya.
 
 ![buat-folder-postgresql](./img/buat-folder-postgresql.png)
 pindah ke direktori proyek
 
 **Langkah 2** : Apply konfigurasi:
+
 ```bash
 oc apply -f openshift/postgresql/postgres-pvc.yaml
 oc apply -f openshift/postgresql/postgres-deployment.yaml
@@ -116,15 +123,19 @@ klik link yang ada di `adminer`. Maka akan diarahkan ke login database.
 `Server`, `Username`, dan `Password` disesuaikan dari `postgres-deployment.yaml`. `Database` dikosongkan.
 
 ![login-postgres](./img/login-postgres.png)
+
 tampilan awal setelah login:
+
 ![login-postgres-2](./img/login-postgres-2.png)
+
 ---
+
 **Langkah 4** : Buat database `springboot-app-db` dan tabel `users`
 
 ![create-database](./img/create-database.png)
 
-
 **Langkah 5** : Modifikasi aplikasi springboot lalu jalankan
+
 - tambahkan dependency di `pom.xml`
 
 ```xml
@@ -144,15 +155,19 @@ tampilan awal setelah login:
 > to-do on June 4th 2025
 
 - clean install
+
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-# Catatan Tambahan
-## Membuat Projek Git 
+## Catatan Tambahan
+
+### Membuat Projek Git
+
 **Langkah 1** : Buka terminal dan navigasi ke tempat folder proyek git mau dibuat
 
 **Langkah 2** : Inisiasi repo
+
 ```bash
 # Inisiasi local repo
 git init
@@ -172,13 +187,14 @@ git remote add origin https://github.com/user/nama-projek.git
 git push -u origin main
 ```
 
+### Kubernetes dan Docker
 
-## Kubernetes dan Docker
 ![kubernetes-pod-arsitektur](./img/kubernetes-pod-arsitektur.png)
 
 ![Container-vs-pods](./img/containers-vs-pods.png)
 
 contoh deklarasi k8s pod dengan 2 container (`.yaml` file):
+
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -202,8 +218,8 @@ spec:
 ###########################
 ```
 
-
 `kubectl` : kubernetes command line tool.
+
 ```bash
 # create pod
 kubectl create -f [yaml-file]
@@ -224,8 +240,8 @@ kubectl delete pod mypod
 kubectl logs [pod-name]
 ```
 
+## Daftar Singkatan
 
-# Daftar Singkatan
 - PaaS : _platform as a service_
 - RBAC : _role based access control_
 - SCC : _security context constraints_

@@ -3,6 +3,7 @@
 # Networking
 
 ## Repeater
+
 - secara fisik sama dengan _switch_
 - selalu broadcast
 - sekarang dipakai hanya untuk _troubleshooting_
@@ -12,10 +13,10 @@
 Zaman dulu:
 ![hub-connections](./img/hub-connections.png)
 
-
 ## OSI Layer
+
 - Application → ranah developer → HTTP
-- Presentation 
+- Presentation
 - Session
 - Transport     → ranah network engineer
 - Network
@@ -23,6 +24,7 @@ Zaman dulu:
 - Physical
 
 ## LAN Addressing
+
 - MAC
 - Ethernet address
 - Burned-in address
@@ -32,14 +34,15 @@ Zaman dulu:
 
 dalam 1 network, tiap device memiliki IP yang berbeda.
 
-
 ## IP Subnetting
+
 ![IP-subnetting](./img/IP-subnetting.png)
 
 `127.0.0.0 - 127.255.255.255` → localhost (diri sendiri)
 
 ### Private IP
-`A` : `1.0.0/18` - `10.255.255.255` 
+
+`A` : `1.0.0/18` - `10.255.255.255`
 `B` : `172.16.0/` - `172.31.255.255`
 `C` : `192.168.0.0` - `192.168.0.255`
 
@@ -49,27 +52,30 @@ Beli IP untuk _hosting_ sendiri → melalui ISP supaya seluruh dunia bisa akses 
 
 contoh:
 `10.0.0.0/8`
+
 - Network address : `10.0.0.0`
 - subnet mask : `/8` (model prefix)
-    - dalam model segmen:
+  - dalam model segmen:
     `11111111.00000000.00000000.00000000` → `255.0.0.0`
 
 - jumlah host:`00000000.11111111.11111111.11111111` → $$256 * 256 * 256 = 2^{24}$$
-- broadcast address: 
+- broadcast address:
     network address + subnetmask
     `10.0.0.0` + `0.255.255.255` = `10.255.255.255`
 
 alternatif:
 gunakan tools **Subnet mask calculator**
 
-# Cisco Packet Tracer
+## Cisco Packet Tracer
+
 → Untuk simulasi
 
 download di : [https://www.netacad.com/dashboard](netacad)
 
 ![CISCO-packet-tracer](./img/CISCO-packet-tracer.png)
 
-# HAProxy
+## HAProxy
+
 → The Reliable, High Performance TCP/HTTP Load Balancer
 ![HAProxy](./img/HAProxy.png)
 
@@ -79,32 +85,40 @@ A client request is forwarded to each server in turn. The algorithm instructs th
 
 ![round-robbin-load-balancing](./img/round-robbin-load-balancing.png)
 
-
 ## Docker
+
 - menampilkan volume yang tersedia
+
 ```bash
 docker volume ls
 ```
 
 - membuat volume docker untuk di-mount ke node-js
+
 ```bash
 docker volume create [nama_volume]
 ```
+
 contoh:
+
 ```bash
 docker volume create nodevol
 ```
 
 - menghapus volume docker
+
 ```bash
 docker volume rm [nama_volume]
 ```
 
 - menjalankan mapping
+
 ```bash
 docker run -it -d --network=host -v [nama_volume]:/[nama_direktori] [link_docker_images]:tag
 ```
+
 contoh :
+
 ```bash
 docker run -it -d --network=host -v nodevol:/nodevol ghcr.io/hendram/node:bookworm-slim
     #-d : daemon (run on background)
@@ -113,33 +127,39 @@ docker run -it -d --network=host -v nodevol:/nodevol ghcr.io/hendram/node:bookwo
 ```
 
 - menampilkan docker yang sedang berjalan
+
 ```bash
 docker ps # docker process
 ```
 
 - memberhentikan docker process:
+
 ```bash
 docker stop [nama_docker]
 ```
 
 - menghapus docker
+
 ```bash
 rocker rm [nama_docker]
 ```
 
 - masuk ke dalam docker container
+
 ```bash
 docker exec -it [nama_process]
 ```
 
 contoh:
+
 ```bash
 docker exec -it elegant_mclean /bin/bash
 ```
 
 docker → mirip virtual machine tetapi di level user space, bukan kernel space.
 
-- apabila images belum ada sama sekali (belum siap pakai) 
+- apabila images belum ada sama sekali (belum siap pakai)
+
 ```bash
 docker compose
 ```
@@ -148,7 +168,6 @@ desain yang _secure_ : taruh di _docker_ jangan banyak di-host. Kalau yang ter-h
 
 yang mengetahui port backend (3030, 3031) hanya haproxy.
 user hanya tahu port haproxy (8080).
-
 
 ## (HANDS-ON) Docker
 
@@ -160,8 +179,10 @@ user hanya tahu port haproxy (8080).
 
 Pre-requisites : sudah menginstall docker di lnux.
 
-### Langkah 0 : Install pre-requisities 
+### Langkah 0 : Install pre-requisities
+
 yang perlu disiapkan untuk _hands-on_:
+
 - `bookworm-haproxy`
 - `bookworm-appsrwback-serverless`
 - `node`
@@ -179,12 +200,15 @@ docker images                     # cek docker images yang sudah terpasang
 ```
 
 ### Langkah 1 : Buat volume
+
 tempat kita menginstall `node` yang kemudian akan di-mount ke banyak `appsrwback`
+
 ```bash
 docker volume create nodevol
 ```
 
 ### Langkah 2 : Export Node ke volume local (nodevol)
+
 ```bash
 docker run -it -d --network=host -v nodevol:/nodevol ghcr.io/hendram/node:bookworm-slim
 
@@ -202,8 +226,11 @@ cp -r /usr/local/lib/node_modules /nodevol/lib/
 ```
 
 ### Langkah 3 : Jalankan appsrwback
+
 #### Langkah 3.1 : Buat server 1 di Port 3000
+
 - membuat server di sebuah port (misal 3000)
+
 ```bash
 # mount nodevol yang berisi node.js ke appsrwback
 docker run -it -d --network=host -v nodevol:/nodevol ghcr.io/hendram/bookworm-appsrwback-serverless bash
@@ -230,6 +257,7 @@ npx vercel dev
 ```
 
 #### Langkah 3.2 : Buat server 2 di Port 3001
+
 lakukan langkah yang sama percis dengan **Langkah 3.1**.
 
 ```bash
@@ -250,7 +278,9 @@ npx vercel dev
 ```
 
 ### Langkah 4 : Jalankah Haproxy & Pantau Log
+
 buka tab baru:
+
 ```bash
 sudo su
 docker run -it -d --network=host ghcr.io/hendram/bookworm-haproxy bash
@@ -263,22 +293,26 @@ tail -f haproxy.log # menghasilkan
 ```
 
 ### Langkah 5 : Test API
+
 ```bash
 curl http://127.0.0.1:8080/api/user     # pada tab baru
 ```
+
 atau bisa akses lewat `browser` dan juga `postman`.
 perhatikan bahwa haproxy melakukan request ke server 1 dan 2 secara bergantian (round-robin).
 
-# Catatan tambahan
+## Catatan tambahan
 
-## melihat statistik Haproxy
+### melihat statistik Haproxy
 
 ```bash
 localhost:9000/stats
 ```
 
-## menghapus volume
+### menghapus volume
+
 Misalkan kita mau menghapus volume `nodevol`. Maka kita perlu hapus semua docker yang masih menggunakan volume tersebut.
+
 ```bash
 # hapus semua inactive docker yang menggunakan volume `nodevol`
 docker ps -a --filter volume=nodevol -q | xargs -r docker rm -f
@@ -287,7 +321,8 @@ docker ps -a --filter volume=nodevol -q | xargs -r docker rm -f
 docker volume rm nodevol
 ```
 
-# Referensi
+## Referensi
+
 - [Haproxy](https://github.com/users/hendram/packages/container/package/bookworm-haproxy)
 - [appsrwback-serverless](https://github.com/users/hendram/packages/container/package/bookworm-appsrwback-serverless)
 - [node](https://github.com/users/hendram/packages/container/package/node)

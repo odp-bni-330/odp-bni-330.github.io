@@ -1,9 +1,9 @@
 <!-- Dirangkum oleh : Bostang Palaguna -->
 <!-- Mei 2025 -->
 
-> Fasilitator : Ferli (Cilegon, Lead SW engineer - ML KS)
-
 # OWASP Intro
+
+> Fasilitator : Ferli (Cilegon, Lead SW engineer - ML KS)
 
 OWASP : komunitas global yang buat _project_, _standard_, dan edukasi ttg keamanan aplikasi.
 
@@ -12,20 +12,25 @@ Developer ➡️ L7
 
 ![OSI-layer](./img/OSI.png)
 
-## SDA & proyek penting:
+## SDA & proyek penting
+
 1. OWASP Top 10
 2. ...
 
-## Alat Utama
+### Alat Utama
+
 1. ZAP (Zed Attack Proxy)
     penetration testing, QA testing
 2. Juice Shop
     website untuk belajar
 3. ...
 
-## Beberapa Framework OWASP
-## Software Assurance Maturity Model (SAMM)
+### Beberapa Framework OWASP
+
+### Software Assurance Maturity Model (SAMM)
+
 -> konteks u/ cakupan software security & good security practice:
+
 - Governance
 - Design
 - Implementation
@@ -34,8 +39,10 @@ Developer ➡️ L7
 
 fondasi keamanan software : fungsi bisnis.
 
-### Confidentiality, Integrity and Availability (CIA) triad
+#### Confidentiality, Integrity and Availability (CIA) triad
+
 -> keamanan pada dasarnya:
+
 - siapa yg bisa berinteraksi dgn informasi
 - apa yg mereka bisa lakukan dgn informasi
 - kapan mereka berinteraksi dgn informasi
@@ -48,17 +55,17 @@ C : protection of data against unauthorized disclosure;
 
 I : protecting data against unauthorized modification
     memastikan _data trustworthiness_
-    source integrity 
-A : ensure presence of information or resources. 
+    source integrity
+A : ensure presence of information or resources.
     replication of data
     protection of the services that provide access to the data -> load balancing.
 
-
-## OWASP Top 10
+### OWASP Top 10
 
 ![owasp-top-10](./img/owasp-top-10.png)
 
-### 1. Broken Access Control
+#### 1. Broken Access Control
+
 ➡️ isu yang masih bertahan sejak 2003.
 
 tidak memberi akses yang _proper_ ke user.
@@ -72,6 +79,7 @@ _Indirect object reference_ (IDOR)
 ![anatomy-of-URL](./img/anatomy-of-URL.png)
 
 **preventif**:
+
 1. RBAC (_role-based-access-control_)
 2. prinsip _least privilege_
 3. manajemen sesi yg tepat
@@ -85,7 +93,8 @@ _Indirect object reference_ (IDOR)
 
 _access control_ ➡️ isu otorisasi.
 
-### 2. Cryptographic Failures
+#### 2. Cryptographic Failures
+
 akibat enkripsi lemah/tdk ada.
     contoh algoritma enkripsi **lemah** : `SHA-1`, `MD5`.
 
@@ -96,6 +105,7 @@ algoritma enkripsi **kuat** yang dipakai sekarang : `AES-256` Encryption
 contoh : app simpan CVV tanpa enkripsi.
 
 **Preventif**:
+
 1. pakai algoritma enkripsi kuat : `AES/RSA`, `Blowfish`
 2. Update pustaka kriptografi
 3. manajemen kunci tepat
@@ -103,9 +113,11 @@ contoh : app simpan CVV tanpa enkripsi.
 
 ![HTTPS-HTTP](./img/HTTPS-HTTP.png)
 
-### 3. Injection
+#### 3. Injection
+
 ➡️ _attacker_ eksekusi program di sistem akibat input yang tidak divaldasi
 contoh :
+
 - SQLi (modifikasi query database)
 - OS command injection (jalankan perintah sistem)
 - SSTI (server-side template injection)
@@ -113,38 +125,42 @@ contoh :
 contoh : [' or 1==1 --](https://stackoverflow.com/questions/60939830/sql-injection-or-1-1-vs-or-1-1)
 
 **preventif**:
+
 - validasi input
     contoh:
-    - panjang data dibatasi (e.g. max 20 karakter)
-    - tipe data
+  - panjang data dibatasi (e.g. max 20 karakter)
+  - tipe data
 - parameterized queries
     ORM tools by default sudah parameterized ➡️ bisa mengatasi SQLi
 - sanitasi data
     mengubah simbol menjadi bentuk ascii/UTF-8 ➡️ untuk menghindari eksekusi kode.
 
+#### 4. Insecure design
 
-### 4. Insecure design
 - arsitektur software yang tidak aman
 - insecure password reset
 
 contoh nyata : (2019) : instagram password 250 kali hanya utk 1 perangkat/IP. buat vm / cloud instances 4000 ➡️ bisa attempt 250 x 4000 kali.
 
 preventif:
+
 - pelajari incident report perusahaan lain u/ tdk mengulangi kesalahan yg sama
 
-### 5. Security misconfiguration
-➡️lupa mematikan debug mode di environment production ➡️ NASA/Jira 
+#### 5. Security misconfiguration
 
+➡️lupa mematikan debug mode di environment production ➡️ NASA/Jira
 
-### 6. Vulnerable & Outdated components
+#### 6. Vulnerable & Outdated components
+
 maintain _dependecy_.
 Jangan gunakan library 3rd party yg _vulnerable_.
 
 preventif:
-1. SBOM (software bill of material) 
-    list library yg dipakai, tahun install, end-of-life, dan versinya 
 
-### 7. Identification & Authentication failures
+1. SBOM (software bill of material)
+    list library yg dipakai, tahun install, end-of-life, dan versinya
+
+#### 7. Identification & Authentication failures
 
 - brute-force password lemah
 - session fixation/hijacking
@@ -153,11 +169,12 @@ preventif:
 - social engineering
 
 preventif:
+
 1. gunakan sandi kuat➡️ bisa pakai fitur generate password
 2. MFA
 3. rate limiting
 
-### 8. Software & Data integrity failures
+#### 8. Software & Data integrity failures
 
 Subresource Integrity (SRI) : integrity version ➡️ otomatis kunci versi tertentu di JS.
 
@@ -167,7 +184,8 @@ Subresource Integrity (SRI) : integrity version ➡️ otomatis kunci versi tert
         crossorigin="anonymous"></script>
 ```
 
-### 9. Security Logging & Monitoring Failures
+#### 9. Security Logging & Monitoring Failures
+
 kesalahan:
     - eksposur data berlebihan
     - tidak ada log sama sekali
@@ -176,32 +194,36 @@ log :
     - data user
 
 preventif:
+
 - testing di luar jam aktif
 - pastikan semua aktivitas penting tercatat
 
-### 10. XSRF (cross-side request forgery)
+#### 10. XSRF (cross-side request forgery)
+
 _app_ ambil sumber daya jarak jauh tanpa validasi URL
 misal : lewat SSH masuk ke cloud kita (AWS, GCP, dll.)
 
-
 ![dev-OPS](./img/DEV-OPS.png)
 
-# Secure Coding Best Practices
+## Secure Coding Best Practices
 
-## Risiko keamanan Utama dalam JS
+### Risiko keamanan Utama dalam JS
+
 1. XSS
 2. SQLi
 3. CSRF
 4. Session Hijacking
 5. Broken Auth
-5. Password Lemah
+6. Password Lemah
 
-## Prinsip dasar penulisan kode aman
+### Prinsip dasar penulisan kode aman
+
 1. **validasi** semua input
 2. escape output sesuai konteks ➡️ hindari XSS
 3. gunakan manajemen sesi yg aman
 
-## Top 10 web application threats
+### Top 10 web application threats
+
 1. input validation
 2. output encoding
 3. authentication & password mngmt
@@ -213,21 +235,21 @@ misal : lewat SSH masuk ke cloud kita (AWS, GCP, dll.)
 9. communication security
 10. system config
 
-### Input validation
+#### Input validation
 
 storage di sisi client (browser):
+
 - local storage
 - session
 - cookies
 
 storage di sisi server :
-- cache 
 
+- cache
 
 authentication (role mngmt):
 backend => bertanggung jawab dgn DB
 frontend => bertanggung jwb dgn input user
-
 
 ![role-management](./img/role-management.png)
 
@@ -235,7 +257,8 @@ frontend => bertanggung jwb dgn input user
 
 kapan menggunakan `uuid` ketimbang `id` biasa? untuk mencegah bruteforce access.
 
-# web Security
+## web Security
+
 **SDLC**:
 plan - STA
 dev - dev
@@ -244,22 +267,26 @@ deploy - SRE
 
 ![CI-CD_pipeline](./img/CI-CD_pipeline.png)
 
-# SonarQube
+## SonarQube
+
 SonarQube ➡️ untuk analisis _sourcecode_. (static analysis)
+
 - Cara Menjalankan server
+
 ```bash
 node app.js
 ```
+
 ![server](./img/server.png)
 
 - Testing melempar request dari client
 ➡️bisa menggunakan `Postman` atau `curl`
-    - contoh dengan `curl`:
+  - contoh dengan `curl`:
 ![curl-client](./img/client.png)
-    - contoh testing dengan `postman`:
+  - contoh testing dengan `postman`:
 ![postman-client](./img/postman-client.png)
 
-**code coverage**
+### code coverage
 
 setiap baris kode harus dilakukan _unit test_.
 
@@ -273,20 +300,19 @@ IF (A and B and C)
 maka ada $2^3$ _case_.
 tim _ops_ manage code coverage.
 
+tahapan penggunaan sonarQube :
 
-tahapan penggunaan sonarQube : 
-
-1. _Analyze new project_
+**Langkah 1.** _Analyze new project_
 
 ![analyze_new_project](./img/analyze_new_project.png)
 
-2. Pilih **previous version**
+**Langnkah 2.** Pilih **previous version**
 ![previous-version](./img/previous-version.png)
 
 Contoh hasil analisis dari sonarQube:
 ![sonarQube-result](./img/sonarQube-result.png)
 
-## Aspek SonarQube
+### Aspek SonarQube
 
 - **security**
     Tingkat kerentanan keamanan (vulnerabilities) dalam kode yang dapat dieksploitasi oleh serangan eksternal, seperti SQL injection, XSS, atau penggunaan dependensi yang tidak aman.  
@@ -295,14 +321,14 @@ Contoh hasil analisis dari sonarQube:
 - **maintainability**
     Kemudahan memahami, memodifikasi, dan memperluas kode. Termasuk kompleksitas dan technical debt.
 - **accepted issues coverage**
-    Persentase issue (bug, kerentanan, dll.) yang telah ditandai sebagai *Accepted* (diterima/diabaikan) oleh tim developer.  
+    Persentase issue (bug, kerentanan, dll.) yang telah ditandai sebagai _Accepted_ (diterima/diabaikan) oleh tim developer.  
 - **duplications**
     Tingkat duplikasi kode (potongan kode yang identik atau hampir sama di beberapa lokasi).  
 - **security hotspots**
     Potensi kerentanan keamanan yang memerlukan **review manual** untuk memastikan apakah benar berbahaya.
 
+## Referensi Tambahan
 
-# Referensi Tambahan
 [PCI-DSS](https://digitalsolusigrup.co.id/pci-dss-adalah/)
 [burpsuite](https://portswigger.net/burp/communitydownload)
 [Crackstation](https://crackstation.net/)

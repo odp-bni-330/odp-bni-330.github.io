@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # DevSecOps
 
 ## Persistent Storage in OpenShift
@@ -306,3 +309,6 @@ manfaat:
 - otomasi dengan `ImageStream` trigger (`ImageChangeTriggers`)
 - gunakan `Label` & `Annotations`
     → contoh : `tier=backend` , `env=prod`
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

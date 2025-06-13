@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # DevSecOps
 
 ## Load Balancing in OpenShift

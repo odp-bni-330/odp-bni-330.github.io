@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # Security
 
 ## Security Network Architecture
@@ -403,3 +406,6 @@ mv sonar-scanner-cli-7.1.0.4889-linux-x64 /opt/sonar-scanner      # pindahkan ke
 echo 'export PATH=$PATH:/opt/sonar-scanner/bin' >> $HOME/.bashrc  # tambahkan ke path
 source $HOME/.bashrc
 ```
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

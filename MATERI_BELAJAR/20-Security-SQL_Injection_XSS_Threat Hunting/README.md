@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # Cloud Security Best Practices
 
 > pemateri : Muhammad Al Fikri, S.Tr.MP., M.T., CISA, CEH (Cybersecurity Analyst, Cyber Intelligence, Penata Layanan Operasional Pusat Sistem Informasi & Teknologi Keuangan, Kemenkeu ; lulus BSSN )
@@ -347,3 +350,6 @@ Elisitasi adalah proses menggali atau memunculkan informasi, opini, fakta, dan s
 <!-- ### OSINT
 
 Open Source Intelligence (OSINT) in cybersecurity involves gathering and analyzing publicly available information to assess threats, identify vulnerabilities, and improve security posture. -->
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

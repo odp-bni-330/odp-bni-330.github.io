@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # Database
 
 ## Data Warehousing & ETL Basics
@@ -493,3 +496,6 @@ db.posts.updateMany({}, { $inc: { likes: 1 } }) // update banyak element
 db.posts.deleteOne({ title: "Post Title 5" })
 db.posts.deleteMany({ category: "Technology" }) // delete banyak element
 ```
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

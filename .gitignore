@@ -1,1 +1,56 @@
-.secret
+# Ignore secret files and credentials
+.secret*
+*.pem
+*.key
+*.crt
+*.env
+.env.*
+*.token
+*.credentials
+*.config.json
+*.kubeconfig
+*.dockerconfigjson
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+*.sw?
+*.swo
+
+# Ignore log and temp files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignore build/output directories
+dist/
+build/
+target/
+node_modules/
+__pycache__/
+*.pyc
+
+# Ignore deployment config (if generated locally)
+.openshift/
+*.ocp-template.yaml
+
+# Ignore Git filter-repo backup (optional)
+.git-rewrite/
+
+# Prevent accidental commits of personal files
+# *.zip
+*.tar.gz
+*.tgz
+
+# ignore installer file
+*.deb
+*.exe
+
+# Ignore sensitive or irrelevant markdown notes
+private_notes.md
+*.draft.md

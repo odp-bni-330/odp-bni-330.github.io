@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # Database
 
 ## Advanced SQL Queries
@@ -486,3 +489,6 @@ SELECT *
 ## Bacaan Lanjutan
 
 - [Data pipeline](https://dataengineering.wiki/Concepts/Data+Pipeline)
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

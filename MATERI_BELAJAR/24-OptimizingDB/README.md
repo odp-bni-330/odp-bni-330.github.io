@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # Database Performance Tuning & Optimization
 
 > Fasilitator : Fauzi
@@ -363,3 +366,5 @@ sudo lsof -i :9092
 # matikan process dengan PID = 20715
 sudo kill 20715
 ```
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

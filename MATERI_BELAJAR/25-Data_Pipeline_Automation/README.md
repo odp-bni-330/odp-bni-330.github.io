@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # Database
 
 ## Data Pipeline & Automation
@@ -454,3 +457,6 @@ Buat database PostgreSQL
 Tampilan hasil :
 
 ![result-demo](./img/result-demo.png)
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

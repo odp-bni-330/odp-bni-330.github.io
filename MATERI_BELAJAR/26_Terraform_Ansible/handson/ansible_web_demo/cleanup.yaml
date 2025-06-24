@@ -1,0 +1,35 @@
+- name: Clean up the simulated web environment
+  hosts: local
+  become: yes
+  tasks:
+    - name: "Stop nginx service"
+      service:
+        name: nginx
+        state: stopped
+
+    - name: "Remove custom nginx site config"
+      file:
+        path: /etc/nginx/sites-available/my_website
+        state: absent
+
+    - name: "Remove symlink from sites-enabled"
+      file:
+        path: /etc/nginx/sites-enabled/my_website
+        state: absent
+
+    - name: "Restore default nginx config (optional)"
+      copy:
+        src: /usr/share/nginx/html/index.nginx-debian.html
+        dest: /var/www/html/index.html
+      ignore_errors: yes
+
+    - name: "Start nginx (optional: with no sites enabled)"
+      service:
+        name: nginx
+        state: started
+
+    - name: "Remove website directory"
+      file:
+        path: /tmp/my_website
+        state: absent
+

@@ -1,0 +1,8 @@
+- name: Basic Ansible Tutorial
+  hosts: local
+  tasks:
+    - name: Create hello.txt
+      copy:
+        content: "Hello from Ansible!\n"
+        dest: /tmp/hello.txt
+

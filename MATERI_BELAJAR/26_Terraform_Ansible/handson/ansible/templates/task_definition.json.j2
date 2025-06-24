@@ -1,0 +1,14 @@
+[
+  {
+    "name": "{{ item.name }}",
+    "image": "{{ item.image }}",
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ]
+  }
+]
+

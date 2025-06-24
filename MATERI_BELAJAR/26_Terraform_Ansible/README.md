@@ -404,60 +404,6 @@ Fitur Jinja2 dalam template
 {{ string | upper }}.
 ```
 
-contoh Template nginx.conf.j2
-
-```conf
-# {{ ansible_managed }}
-
-user {{ nginx_user }};
-worker_processes {{ nginx_worker_processes }};
-{% if nginx_error_log is defined %}
-error_log {{ nginx_error_log }} {{ nginx_error_log_level | default('error') }};
-{% endif %}
-
-events {
-    worker_connections {{ nginx_worker_connections }};
-    {% if nginx_multi_accept is defined and nginx_multi_accept %}
-    multi_accept on;
-    {% endif %}
-}
-
-http {
-    include       {{ nginx_mime_types_path }};
-    default_type  application/octet-stream;
-
-    # Log Format
-    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "$http_x_forwarded_for"';
-
-    {% if nginx_access_log is defined %}
-    access_log  {{ nginx_access_log }}  main;
-    {% endif %}
-
-    sendfile        on;
-    tcp_nopush     on;
-    tcp_nodelay    on;
-
-    keepalive_timeout  {{ nginx_keepalive_timeout }};
-    types_hash_max_size {{ nginx_types_hash_max_size | default(2048) }};
-
-    {% if nginx_gzip is defined and nginx_gzip %}
-    # Gzip Settings
-    gzip  on;
-    gzip_disable "msie6";
-    gzip_vary on;
-    gzip_proxied any;
-    gzip_comp_level {{ nginx_gzip_comp_level | default(6) }};
-    gzip_types {{ nginx_gzip_types | default('text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript') }};
-    {% endif %}
-
-    # Virtual Host Configs
-    include {{ nginx_conf_dir }}/conf.d/*.conf;
-    include {{ nginx_conf_dir }}/sites-enabled/*;
-}
-```
-
 ### Role-based Playbooks
 
 Struktur direktori:

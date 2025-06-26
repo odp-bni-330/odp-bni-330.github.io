@@ -399,10 +399,13 @@ docker compose up
 3. Select index pattern 'demo-logs-*'
 4. View real-time logs
 
-[create_data_view](./img/create_data_view.png)
-[save_data_view](./img/save_data_view.png)
-[create_dashboard](./img/create_dashboard.png)
-[dashboard](./img/dashboard.png)
+![create_data_view](./img/create_data_view.png)
+
+![save_data_view](./img/save_data_view.png)
+
+![create_dashboard](./img/create_dashboard.png)
+
+![dashboard](./img/dashboard.png)
 
 
 ---

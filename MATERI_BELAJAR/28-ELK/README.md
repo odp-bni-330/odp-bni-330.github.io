@@ -383,5 +383,30 @@ mengapa visualisasi & monitoring penting?
   - Filters: Pengelompokan berdasarkan query
   - Geospatial: Pengelompokan berdasarkan lokasi
 
+### (HANDSON) ELK Stack
+
+> file handson : `./handson/log.zip`
+
+**Langkah 1** : jalankan ELK stack di docker
+
+```bash
+docker compose up
+```
+
+**Langkah 2** : Buat Index
+1. Open Kibana at http://localhost:5601
+2. Go to Analytics > Discover
+3. Select index pattern 'demo-logs-*'
+4. View real-time logs
+
+![create_data_view](./img/create_data_view.png)
+
+![save_data_view](./img/save_data_view.png)
+
+![create_dashboard](./img/create_dashboard.png)
+
+![dashboard](./img/dashboard.png)
+
+
 ---
 [🏠Back to Course Lists](https://odp-bni-330.github.io/)

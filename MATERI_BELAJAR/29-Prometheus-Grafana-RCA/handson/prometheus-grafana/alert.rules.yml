@@ -1,0 +1,11 @@
+groups:
+  - name: cpu_alert_group
+    rules:
+      - alert: HighCPUUsage
+        expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 10
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU usage tinggi di {{ $labels.instance }}"
+          description: "CPU usage di atas 10% selama lebih dari 1 menit."

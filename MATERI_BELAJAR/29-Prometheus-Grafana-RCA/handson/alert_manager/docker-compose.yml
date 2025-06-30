@@ -1,0 +1,44 @@
+services:
+############## PROMETHEUS ##############
+  prometheus:
+    image:  prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./alert.rules.yml:/etc/prometheus/alert.rules.yml
+    ports:
+      - "9090:9090"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+########################################
+
+############## ALERT MANAGER ##############
+  alertmanager: # Combined definition
+    image: prom/alertmanager:latest # Use the specific image with ':latest' for consistency
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml' # Important to specify config
+    ports:
+      - "9093:9093"
+    depends_on: # Important for MailHog to be ready
+      - mailhog
+      - prometheus # Also good practice to depend on prometheus for alert firing
+###########################################
+
+############## NODE EXPORTER ##############
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    ports:
+      - "9100:9100"
+    restart: unless-stopped
+###########################################
+
+############## MAIL HOG ##############
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "1025:1025" # SMTP
+      - "8025:8025" # Web UI
+######################################

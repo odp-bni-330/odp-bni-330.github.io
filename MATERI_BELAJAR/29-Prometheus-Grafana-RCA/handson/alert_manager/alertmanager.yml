@@ -1,0 +1,46 @@
+global:
+  # The default SMTP From header field.
+  smtp_from: 'alertmanager@yourdomain.local'
+  # The default SMTP smarthost used for sending emails, including port number.
+  # If MailHog is a Docker service named 'mailhog', use 'mailhog:1025'.
+  # If MailHog is on localhost, use 'localhost:1025'.
+  smtp_smarthost: 'mailhog:1025' # Or 'localhost:1025' if not using Docker Compose service name
+  
+  # MailHog does not require authentication by default.
+  # So, leave smtp_auth_username and smtp_auth_password empty or commented out.
+  # smtp_auth_username: ''
+  # smtp_auth_password: ''
+
+  # MailHog typically runs without TLS for local development.
+  smtp_require_tls: false
+
+# The root route on which each incoming alert enters.
+route:
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+  receiver: 'email-receiver'
+
+receivers:
+  - name: 'email-receiver'
+    email_configs:
+      - to: 'your-test-email@example.com' # This is where MailHog will "receive" the email
+        # No auth_username or auth_password needed for MailHog by default
+        
+# ############# GMAIL ##############
+# global:
+#   smtp_smarthost: 'smtp.gmail.com:587'
+#   smtp_from: 'namakamu@gmail.com'
+#   smtp_auth_username: 'namakamu@gmail.com'
+#   smtp_auth_password: 'aplikasi_password_gmail'
+
+# route:
+#   receiver: email-receiver
+
+# receivers:
+#   - name: email-receiver
+#     email_configs:
+#       - to: 'penerima@example.com'
+#         send_resolved: true
+# ##################################

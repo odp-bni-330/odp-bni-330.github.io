@@ -1,0 +1,15 @@
+global:
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'namakamu@gmail.com'
+  smtp_auth_username: 'namakamu@gmail.com'
+  smtp_auth_password: 'aplikasi_password_gmail'
+
+route:
+  receiver: email-receiver
+
+receivers:
+  - name: email-receiver
+    email_configs:
+      - to: 'penerima@example.com'
+        send_resolved: true
+        

@@ -1,0 +1,14 @@
+- name: Install apache2 di target
+  hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+  - name: Install apache2
+    apt:
+      name: apache2
+      update_cache: yes
+      state: present
+  - name: Restart apache2
+    command: service apache2 restart
+  # - name: moving index html
+  #   command: service apache2 restart

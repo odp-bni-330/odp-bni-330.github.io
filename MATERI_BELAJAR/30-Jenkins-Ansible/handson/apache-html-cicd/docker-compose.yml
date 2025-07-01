@@ -1,0 +1,39 @@
+services:
+######################## JENKINS ########################
+  jenkins2:
+    build:
+      context: .
+      dockerfile: Dockerfile.jenkins
+    container_name: jenkins2
+    ports:
+      - "8081:8080"
+      - "50001:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - ./ansible:/home/jenkins/ansible
+    privileged: true
+#########################################################
+
+######################## TARGET ########################
+  target3:
+    # image: ubuntu:22.04
+    # image: ubuntu:22.10
+    image: ubuntu:latest
+    container_name: target3
+    command: ["sleep", "infinity"]
+    privileged: true
+    ports:
+      - 8000:80
+    expose:
+      - "22"
+    volumes:
+      - ./target-init.sh:/target-init.sh
+      
+      # UNTUK HTML
+      - ./index.html:/var/www/html/index.html
+    entrypoint: ["/bin/bash", "/target-init.sh"]
+########################################################
+
+volumes:
+  jenkins_home:
+    

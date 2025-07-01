@@ -1,0 +1,10 @@
+- name: Install cowsay di target
+  hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+  - name: Install cowsay
+    apt:
+      name: cowsay
+      update_cache: yes
+      state: present

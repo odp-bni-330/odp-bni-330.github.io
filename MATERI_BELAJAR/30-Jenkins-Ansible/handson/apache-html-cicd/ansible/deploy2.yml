@@ -1,0 +1,22 @@
+- name: Apache Titolicious! 
+  hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+    - name: Apache installation
+      apt:
+        name: apache2
+        update_cache: yes
+        state: present
+    - name: Start Apache2
+      shell: |
+        service apache2 start
+        update-rc.d apache2 enable
+      ignore_errors: yes
+
+    - name: Moving Titolicious
+      copy:
+        src: index/
+        dest: /var/www/html/
+    - name: Restart Service 
+      command: service apache2 restart

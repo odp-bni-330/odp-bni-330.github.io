@@ -1,0 +1,28 @@
+- name: Undeploy Titolicious and Apache
+  hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+    - name: Stop Apache manually
+      command: service apache2 stop
+      ignore_errors: yes  
+
+    # - name: Remove Titolicious web content
+    #   file:
+    #     path: /var/www/html/
+    #     state: absent
+
+    # - name: Recreate empty web root directory
+    #   file:
+    #     path: /var/www/html/
+    #     state: directory
+    #     owner: www-data
+    #     group: www-data
+    #     mode: '0755'
+
+    # - name: Uninstall Apache and curl
+    #   apt:
+    #     name:
+    #       - apache2
+    #       - curl
+    #     state: absent

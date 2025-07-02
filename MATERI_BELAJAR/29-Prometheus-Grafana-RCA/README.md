@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juni 2025 -->
+
 # System Monitoring
 
 > Tutor : Mas Ayat Maulana (Ayat)
@@ -497,3 +500,6 @@ kita juga bisa membuat dashboard dan visualisasi kita sendiri:
 ![manual-visualization-grafana](./img/manual-visualization-grafana.png)
 
 ![manual-visual-grafana](./img/manual-visual-grafana.png)
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

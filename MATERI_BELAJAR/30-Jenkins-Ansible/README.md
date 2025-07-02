@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juli 2025 -->
+
 # Automation
 
 ## Automasi Deployment dengan Ansible & Jenkins
@@ -271,3 +274,6 @@ docker inspect [container_id] | grep IPAddress
 ```
 
 Build now pada jenkins
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

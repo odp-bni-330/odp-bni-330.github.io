@@ -394,7 +394,8 @@ docker compose up
 ```
 
 **Langkah 2** : Buat Index
-1. Open Kibana at http://localhost:5601
+
+1. Open Kibana at [http://localhost:5601](http://localhost:5601)
 2. Go to Analytics > Discover
 3. Select index pattern 'demo-logs-*'
 4. View real-time logs
@@ -406,7 +407,6 @@ docker compose up
 ![create_dashboard](./img/create_dashboard.png)
 
 ![dashboard](./img/dashboard.png)
-
 
 ---
 [🏠Back to Course Lists](https://odp-bni-330.github.io/)

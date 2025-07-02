@@ -1,0 +1,1 @@
+[TLS, or Transport Layer Security](https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/), is an encryption and authentication protocol that verifies that a server is legitimate, meaning it is who it claims to be. In mutual TLS, the verification process takes place on both sides: the client is verified as well as the server

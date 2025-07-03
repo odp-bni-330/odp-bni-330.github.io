@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: springboot
+  template:
+    metadata:
+      labels: 
+        app: springboot
+    spec:
+      containers:
+      - name: springboot
+        image: titoalexsta/demo-app:latest
+        ports:
+        - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: springboot
+  ports:
+    - port: 80          # yang diakses dari localhost
+      targetPort: 8080    # masuk ke port container (container port)
+      protocol: TCP
+
+#### VERSI PORT FORWARD ####
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: springboot-deployment
+# spec:
+#   replicas: 1 
+#   # replicas: 3
+#   selector:
+#     matchLabels:
+#       app: springboot
+#   template:
+#     metadata:
+#       labels: 
+#         app: springboot
+#     spec:
+#       containers:
+#       - name: springboot
+#         image: titoalexsta/demo-app:latest
+#         ports:
+#         - containerPort: 8080
+
+# 8080 -> EXPOSE di Dockerfile image
+# minikube kubectl -- apply -f deployment.yml
+# minikube kubectl -- port-forward deployment.apps/springboot-deployment 8090:8080
+# akses localhost:8090

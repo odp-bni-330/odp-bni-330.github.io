@@ -1,0 +1,75 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: bostang-caddy-cloudrun
+  namespace: '161403111738'
+  selfLink: /apis/serving.knative.dev/v1/namespaces/161403111738/services/bostang-caddy-cloudrun
+  uid: 59271558-d0a2-415e-887f-a61c28397b34
+  resourceVersion: AAY5FsvfHtE
+  generation: 1
+  creationTimestamp: '2025-07-04T09:05:26.512425Z'
+  labels:
+    run.googleapis.com/satisfiesPzs: 'true'
+    cloud.googleapis.com/location: asia-southeast2
+  annotations:
+    run.googleapis.com/client-name: cloud-console
+    serving.knative.dev/creator: bostangsteiitb2020@gmail.com
+    serving.knative.dev/lastModifier: bostangsteiitb2020@gmail.com
+    run.googleapis.com/operation-id: eb0731e9-1bdf-4837-9aca-a3eb38c25241
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+    run.googleapis.com/invoker-iam-disabled: 'true'
+    run.googleapis.com/urls: '["https://bostang-caddy-cloudrun-161403111738.asia-southeast2.run.app","https://bostang-caddy-cloudrun-fci4ivh7ca-et.a.run.app"]'
+spec:
+  template:
+    metadata:
+      labels:
+        run.googleapis.com/startupProbeType: Default
+      annotations:
+        autoscaling.knative.dev/maxScale: '100'
+        run.googleapis.com/client-name: cloud-console
+        run.googleapis.com/startup-cpu-boost: 'true'
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      serviceAccountName: 161403111738-compute@developer.gserviceaccount.com
+      containers:
+      - name: caddy-1
+        image: caddy:alpine
+        ports:
+        - name: http1
+          containerPort: 80
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 128Mi
+        startupProbe:
+          timeoutSeconds: 240
+          periodSeconds: 240
+          failureThreshold: 1
+          tcpSocket:
+            port: 80
+  traffic:
+  - percent: 100
+    latestRevision: true
+status:
+  observedGeneration: 1
+  conditions:
+  - type: Ready
+    status: 'True'
+    lastTransitionTime: '2025-07-04T09:05:32.724945Z'
+  - type: ConfigurationsReady
+    status: 'True'
+    lastTransitionTime: '2025-07-04T09:05:31.467806Z'
+  - type: RoutesReady
+    status: 'True'
+    lastTransitionTime: '2025-07-04T09:05:32.686755Z'
+  latestReadyRevisionName: bostang-caddy-cloudrun-00001-sgv
+  latestCreatedRevisionName: bostang-caddy-cloudrun-00001-sgv
+  traffic:
+  - revisionName: bostang-caddy-cloudrun-00001-sgv
+    percent: 100
+    latestRevision: true
+  url: https://bostang-caddy-cloudrun-fci4ivh7ca-et.a.run.app
+  address:
+    url: https://bostang-caddy-cloudrun-fci4ivh7ca-et.a.run.app

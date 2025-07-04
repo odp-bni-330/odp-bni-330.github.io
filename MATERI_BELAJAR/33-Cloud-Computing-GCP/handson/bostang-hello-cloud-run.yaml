@@ -1,0 +1,75 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: bostang-hello-cloudrun
+  namespace: '161403111738'
+  selfLink: /apis/serving.knative.dev/v1/namespaces/161403111738/services/bostang-hello-cloudrun
+  uid: 68118ba6-b30d-4378-9e79-323413648d87
+  resourceVersion: AAY5Fqox0pE
+  generation: 1
+  creationTimestamp: '2025-07-04T08:56:02.763075Z'
+  labels:
+    run.googleapis.com/satisfiesPzs: 'true'
+    cloud.googleapis.com/location: asia-southeast2
+  annotations:
+    run.googleapis.com/client-name: cloud-console
+    serving.knative.dev/creator: bostangsteiitb2020@gmail.com
+    serving.knative.dev/lastModifier: bostangsteiitb2020@gmail.com
+    run.googleapis.com/operation-id: f9ee19b9-c2db-43ab-8be3-6a5b6854d9ab
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+    run.googleapis.com/invoker-iam-disabled: 'true'
+    run.googleapis.com/urls: '["https://bostang-hello-cloudrun-161403111738.asia-southeast2.run.app","https://bostang-hello-cloudrun-fci4ivh7ca-et.a.run.app"]'
+spec:
+  template:
+    metadata:
+      labels:
+        run.googleapis.com/startupProbeType: Default
+      annotations:
+        autoscaling.knative.dev/maxScale: '100'
+        run.googleapis.com/client-name: cloud-console
+        run.googleapis.com/startup-cpu-boost: 'true'
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      serviceAccountName: 161403111738-compute@developer.gserviceaccount.com
+      containers:
+      - name: hello-1
+        image: us-docker.pkg.dev/cloudrun/container/hello
+        ports:
+        - name: http1
+          containerPort: 8080
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+        startupProbe:
+          timeoutSeconds: 240
+          periodSeconds: 240
+          failureThreshold: 1
+          tcpSocket:
+            port: 8080
+  traffic:
+  - percent: 100
+    latestRevision: true
+status:
+  observedGeneration: 1
+  conditions:
+  - type: Ready
+    status: 'True'
+    lastTransitionTime: '2025-07-04T08:56:07.719569Z'
+  - type: ConfigurationsReady
+    status: 'True'
+    lastTransitionTime: '2025-07-04T08:56:06.477613Z'
+  - type: RoutesReady
+    status: 'True'
+    lastTransitionTime: '2025-07-04T08:56:07.690867Z'
+  latestReadyRevisionName: bostang-hello-cloudrun-00001-jzt
+  latestCreatedRevisionName: bostang-hello-cloudrun-00001-jzt
+  traffic:
+  - revisionName: bostang-hello-cloudrun-00001-jzt
+    percent: 100
+    latestRevision: true
+  url: https://bostang-hello-cloudrun-fci4ivh7ca-et.a.run.app
+  address:
+    url: https://bostang-hello-cloudrun-fci4ivh7ca-et.a.run.app

@@ -1,226 +1,233 @@
 [
-    {
-      "day": "D1",
-      "title": "Intro to Web Dev.",
-      "image": "./assets/1-webdev_logo.jpeg",
-      "alt": "Intro to Web Development (HTML+CSS)",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/1-Intro_to_web_dev"
-    },
-    {
-      "day": "D2",
-      "title": "JS Fundamentals",
-      "image": "./assets/2-JS-logo.png",
-      "alt": "JS Fundamentals",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/2-JS_fundamentals"
-    },
-    {
-      "day": "D3",
-      "title": "Intro to Algo & Flowchart",
-      "image": "./assets/3-flowchart.png",
-      "alt": "Intro to Algorithm & Flowchart",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/3-Intro_to_Algo_Flowchart"
-    },
-    {
-      "day": "D4",
-      "title": "OWASP Fundamentals",
-      "image": "./assets/4-OWASP_logo.webp",
-      "alt": "OWASP Fundamental",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/4-OWASP"
-    },
-    {
-      "day": "D5",
-      "title": "Secure API Dev.",
-      "image": "./assets/5-REST_API.jpeg",
-      "alt": "REST API",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/5-Intro_to_API"
-    },
-    {
-      "day": "D6",
-      "title": "Intro to Springboot",
-      "image": "./assets/6-springboot.jpeg",
-      "alt": "Intro to Springboot",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/6-Intro_to_Springboot"
-    },
-    {
-      "day": "D7",
-      "title": "ORM",
-      "image": "./assets/7-ORM.png",
-      "alt": "ORM",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/7-ORM"
-    },
-    {
-      "day": "D8",
-      "title": "API Rate Limiting",
-      "image": "./assets/8-JWT.png",
-      "alt": "API rate limiting",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/8-API_rate_limiting"
-    },
-    {
-      "day": "D9",
-      "title": "Networking Basic",
-      "image": "./assets/9-networking.jpeg",
-      "alt": "Networking Basic",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/9-Networking_basic"
-    },
-    {
-      "day": "D10",
-      "title": "TCP/IP Wireshark",
-      "image": "./assets/10-wireshark.jpg",
-      "alt": "TCP_IP_Analysis_Wireshark",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/10-TCP_IP_Analysis_Wireshark"
-    },
-    {
-      "day": "D11",
-      "title": "Spring Boot with OracleDB, Caching, and API versioning",
-      "image": "./assets/11-OracleDB_springboot.png",
-      "alt": "SpringBoot_with_Oracle_DB",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/11-OracleDB_SpringBoot"
-    },
-    {
-      "day": "D12",
-      "title": "Logging and Monitoring using ELK Stack",
-      "image": "./assets/12-elk_stack.webp",
-      "alt": "ELK_stack",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/12-Logging_and_Monitoring_ELKStack"
-    },
-    {
-      "day": "D13",
-      "title": "OpenShift",
-      "image": "./assets/13-openshift.png",
-      "alt": "Open Shift",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/13-OpenShift"
-    },
-    {
-      "day": "D14",
-      "title": "Ingress, Config, Healhtcheck pada OpenShift",
-      "image": "./assets/14-healthcheck-openshift.png",
-      "alt": "Open Shift",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/14-DeploymentConfig_LiveCheck_OpenShift"
-    },
-    {
-      "day": "D15",
-      "title": "Horizontal Pod Autoscalling dan Monitoring pada OpenShift",
-      "image": "./assets/15-horizontal-pod-autoscaling-monitoring.png",
-      "alt": "Open Shift",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/15-HPA-monitoring-OpenShift"
-    },
-    {
-      "day": "D16",
-      "title": "Persistent Volume Claim dan CI/CD dengan Jenkins",
-      "image": "./assets/16-jenkins.png",
-      "alt": "Jenkins",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/16-PersistentVolumeClaim-Jenkins"
-    },
-    {
-      "day": "D17",
-      "title": "Load Balancing, Best Practices, dan Dokumentasi dengan Confluence",
-      "image": "./assets/17-confluence.png",
-      "alt": "Jenkins",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/17-Loadbalancing_documentation"
-    },
-    {
-      "day": "D18",
-      "title": "Security & Logging",
-      "image": "./assets/18-suricata.jpeg",
-      "alt": "Suricata",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/18-Security-Logging"
-    },
-    {
-      "day": "D19",
-      "title": "VPC, DDoS, Othorization, and Scanning",
-      "image": "./assets/19-sonarqube.png",
-      "alt": "sonarqube",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/19-VPC_DDoS_Othorization_Scanning"
-    },
-    {
-      "day": "D20",
-      "title": "SQL Injection, XSS, Threat Hunting",
-      "image": "./assets/20-burpsuite.jpg",
-      "alt": "burpsuite",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/20-Security-SQL_Injection_XSS_Threat Hunting"
-    },
-    {
-      "day": "D21",
-      "title": "SQL",
-      "image": "./assets/21-postgres.png",
-      "alt": "postgres",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/21-SQL"
-    },
-    {
-      "day": "D22",
-      "title": "Advanced SQL : Sub-queries, Query Planner, Access Control",
-      "image": "./assets/22-database.png",
-      "alt": "database",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/22-Advanced SQL"
-    },
-    {
-      "day": "D23",
-      "title": "Mongo DB",
-      "image": "./assets/23-mongodb.png",
-      "alt": "mongodb",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/23-NoSQL"
-    },
-    {
-      "day": "D24",
-      "title": "Optimisasi DB & Visualisasi Data",
-      "image": "./assets/24-kafka.webp",
-      "alt": "kafka",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/24-OptimizingDB"
-    },
-    {
-      "day": "D25",
-      "title": "Data Pipeline & Automation",
-      "image": "./assets/25-airflow.png",
-      "alt": "Airflow",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/25-Data_Pipeline_Automation"
-    },
-    {
-      "day": "D26",
-      "title": "Infrastructure Automation dengan Terraform dan Ansible",
-      "image": "./assets/26-terraform-ansible.jpeg",
-      "alt": "terraform-ansible",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/26-Terraform_Ansible"
-    },
-    {
-      "day": "D27",
-      "title": "Jenkins, Prometheus, Grafana",
-      "image": "./assets/27-prometheus_grafana.png",
-      "alt": "prometheus-grafana",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/27-Jenkins_Prometheus_Grafana"
-    },
-    {
-      "day": "D28",
-      "title": "ElasticSearch, Logstash, Kibana",
-      "image": "./assets/28-elk.png",
-      "alt": "elk",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/28-ELK"
-    },
-    {
-      "day": "D29",
-      "title": "Prometheus, Grafana, Root Cause Analysis",
-      "image": "./assets/29-5-whys.jpeg",
-      "alt": "RCA",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/29-Prometheus-Grafana-RCA"
-    },
-    {
-      "day": "D30",
-      "title": "CI/CD dengan Jenkins dan Ansible",
-      "image": "./assets/30-jenkins-ansible.jpeg",
-      "alt": "Jenkins+Ansible",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/30-Jenkins-Ansible"
-    },
-    {
-      "day": "D31",
-      "title": "Kubernetes dan Minikube",
-      "image": "./assets/31-k8s.png",
-      "alt": "Kubernetes",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/31-Kubernetes-Minikube"
-    },
-    {
-      "day": "D32",
-      "title": "Deployment di Kubernetes",
-      "image": "./assets/32-springboot-k8s.png",
-      "alt": "Springboot-Kubernetes",
-      "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/32-Kubernetes-Deployment"
-    }
+  {
+    "day": "D1",
+    "title": "Intro to Web Dev.",
+    "image": "./assets/1-webdev_logo.jpeg",
+    "alt": "Intro to Web Development (HTML+CSS)",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/1-Intro_to_web_dev"
+  },
+  {
+    "day": "D2",
+    "title": "JS Fundamentals",
+    "image": "./assets/2-JS-logo.png",
+    "alt": "JS Fundamentals",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/2-JS_fundamentals"
+  },
+  {
+    "day": "D3",
+    "title": "Intro to Algo & Flowchart",
+    "image": "./assets/3-flowchart.png",
+    "alt": "Intro to Algorithm & Flowchart",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/3-Intro_to_Algo_Flowchart"
+  },
+  {
+    "day": "D4",
+    "title": "OWASP Fundamentals",
+    "image": "./assets/4-OWASP_logo.webp",
+    "alt": "OWASP Fundamental",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/4-OWASP"
+  },
+  {
+    "day": "D5",
+    "title": "Secure API Dev.",
+    "image": "./assets/5-REST_API.jpeg",
+    "alt": "REST API",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/5-Intro_to_API"
+  },
+  {
+    "day": "D6",
+    "title": "Intro to Springboot",
+    "image": "./assets/6-springboot.jpeg",
+    "alt": "Intro to Springboot",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/6-Intro_to_Springboot"
+  },
+  {
+    "day": "D7",
+    "title": "ORM",
+    "image": "./assets/7-ORM.png",
+    "alt": "ORM",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/7-ORM"
+  },
+  {
+    "day": "D8",
+    "title": "API Rate Limiting",
+    "image": "./assets/8-JWT.png",
+    "alt": "API rate limiting",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/8-API_rate_limiting"
+  },
+  {
+    "day": "D9",
+    "title": "Networking Basic",
+    "image": "./assets/9-networking.jpeg",
+    "alt": "Networking Basic",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/9-Networking_basic"
+  },
+  {
+    "day": "D10",
+    "title": "TCP/IP Wireshark",
+    "image": "./assets/10-wireshark.jpg",
+    "alt": "TCP_IP_Analysis_Wireshark",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/10-TCP_IP_Analysis_Wireshark"
+  },
+  {
+    "day": "D11",
+    "title": "Spring Boot with OracleDB, Caching, and API versioning",
+    "image": "./assets/11-OracleDB_springboot.png",
+    "alt": "SpringBoot_with_Oracle_DB",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/11-OracleDB_SpringBoot"
+  },
+  {
+    "day": "D12",
+    "title": "Logging and Monitoring using ELK Stack",
+    "image": "./assets/12-elk_stack.webp",
+    "alt": "ELK_stack",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/12-Logging_and_Monitoring_ELKStack"
+  },
+  {
+    "day": "D13",
+    "title": "OpenShift",
+    "image": "./assets/13-openshift.png",
+    "alt": "Open Shift",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/13-OpenShift"
+  },
+  {
+    "day": "D14",
+    "title": "Ingress, Config, Healhtcheck pada OpenShift",
+    "image": "./assets/14-healthcheck-openshift.png",
+    "alt": "Open Shift",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/14-DeploymentConfig_LiveCheck_OpenShift"
+  },
+  {
+    "day": "D15",
+    "title": "Horizontal Pod Autoscalling dan Monitoring pada OpenShift",
+    "image": "./assets/15-horizontal-pod-autoscaling-monitoring.png",
+    "alt": "Open Shift",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/15-HPA-monitoring-OpenShift"
+  },
+  {
+    "day": "D16",
+    "title": "Persistent Volume Claim dan CI/CD dengan Jenkins",
+    "image": "./assets/16-jenkins.png",
+    "alt": "Jenkins",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/16-PersistentVolumeClaim-Jenkins"
+  },
+  {
+    "day": "D17",
+    "title": "Load Balancing, Best Practices, dan Dokumentasi dengan Confluence",
+    "image": "./assets/17-confluence.png",
+    "alt": "Jenkins",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/17-Loadbalancing_documentation"
+  },
+  {
+    "day": "D18",
+    "title": "Security & Logging",
+    "image": "./assets/18-suricata.jpeg",
+    "alt": "Suricata",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/18-Security-Logging"
+  },
+  {
+    "day": "D19",
+    "title": "VPC, DDoS, Othorization, and Scanning",
+    "image": "./assets/19-sonarqube.png",
+    "alt": "sonarqube",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/19-VPC_DDoS_Othorization_Scanning"
+  },
+  {
+    "day": "D20",
+    "title": "SQL Injection, XSS, Threat Hunting",
+    "image": "./assets/20-burpsuite.jpg",
+    "alt": "burpsuite",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/20-Security-SQL_Injection_XSS_Threat Hunting"
+  },
+  {
+    "day": "D21",
+    "title": "SQL",
+    "image": "./assets/21-postgres.png",
+    "alt": "postgres",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/21-SQL"
+  },
+  {
+    "day": "D22",
+    "title": "Advanced SQL : Sub-queries, Query Planner, Access Control",
+    "image": "./assets/22-database.png",
+    "alt": "database",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/22-Advanced SQL"
+  },
+  {
+    "day": "D23",
+    "title": "Mongo DB",
+    "image": "./assets/23-mongodb.png",
+    "alt": "mongodb",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/23-NoSQL"
+  },
+  {
+    "day": "D24",
+    "title": "Optimisasi DB & Visualisasi Data",
+    "image": "./assets/24-kafka.webp",
+    "alt": "kafka",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/24-OptimizingDB"
+  },
+  {
+    "day": "D25",
+    "title": "Data Pipeline & Automation",
+    "image": "./assets/25-airflow.png",
+    "alt": "Airflow",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/25-Data_Pipeline_Automation"
+  },
+  {
+    "day": "D26",
+    "title": "Infrastructure Automation dengan Terraform dan Ansible",
+    "image": "./assets/26-terraform-ansible.jpeg",
+    "alt": "terraform-ansible",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/26-Terraform_Ansible"
+  },
+  {
+    "day": "D27",
+    "title": "Jenkins, Prometheus, Grafana",
+    "image": "./assets/27-prometheus_grafana.png",
+    "alt": "prometheus-grafana",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/27-Jenkins_Prometheus_Grafana"
+  },
+  {
+    "day": "D28",
+    "title": "ElasticSearch, Logstash, Kibana",
+    "image": "./assets/28-elk.png",
+    "alt": "elk",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/28-ELK"
+  },
+  {
+    "day": "D29",
+    "title": "Prometheus, Grafana, Root Cause Analysis",
+    "image": "./assets/29-5-whys.jpeg",
+    "alt": "RCA",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/29-Prometheus-Grafana-RCA"
+  },
+  {
+    "day": "D30",
+    "title": "CI/CD dengan Jenkins dan Ansible",
+    "image": "./assets/30-jenkins-ansible.jpeg",
+    "alt": "Jenkins+Ansible",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/30-Jenkins-Ansible"
+  },
+  {
+    "day": "D31",
+    "title": "Kubernetes dan Minikube",
+    "image": "./assets/31-k8s.png",
+    "alt": "Kubernetes",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/31-Kubernetes-Minikube"
+  },
+  {
+    "day": "D32",
+    "title": "Deployment di Kubernetes",
+    "image": "./assets/32-springboot-k8s.png",
+    "alt": "Springboot-Kubernetes",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/32-Kubernetes-Deployment"
+  },
+  {
+    "day": "D33",
+    "title": "Introduction to Cloud Computing (GCP)",
+    "image": "./assets/33-GCP.png",
+    "alt": "GCP",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/33-GCP"
+  }
 ]

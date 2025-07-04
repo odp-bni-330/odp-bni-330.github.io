@@ -1,0 +1,75 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: bostang-nginx-cloudrun
+  namespace: '161403111738'
+  selfLink: /apis/serving.knative.dev/v1/namespaces/161403111738/services/bostang-nginx-cloudrun
+  uid: 6f2c01ca-b495-41d5-8d79-1d4c66945304
+  resourceVersion: AAY5Fun24RM
+  generation: 1
+  creationTimestamp: '2025-07-04T09:13:52.653172Z'
+  labels:
+    run.googleapis.com/satisfiesPzs: 'true'
+    cloud.googleapis.com/location: asia-southeast2
+  annotations:
+    run.googleapis.com/client-name: cloud-console
+    serving.knative.dev/creator: bostangsteiitb2020@gmail.com
+    serving.knative.dev/lastModifier: bostangsteiitb2020@gmail.com
+    run.googleapis.com/operation-id: 410d7944-f1c6-4ef9-9f3e-546c3e2dcf12
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+    run.googleapis.com/invoker-iam-disabled: 'true'
+    run.googleapis.com/urls: '["https://bostang-nginx-cloudrun-161403111738.asia-southeast2.run.app","https://bostang-nginx-cloudrun-fci4ivh7ca-et.a.run.app"]'
+spec:
+  template:
+    metadata:
+      labels:
+        run.googleapis.com/startupProbeType: Default
+      annotations:
+        autoscaling.knative.dev/maxScale: '100'
+        run.googleapis.com/client-name: cloud-console
+        run.googleapis.com/startup-cpu-boost: 'true'
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      serviceAccountName: 161403111738-compute@developer.gserviceaccount.com
+      containers:
+      - name: nginx-1
+        image: nginx:alpine
+        ports:
+        - name: http1
+          containerPort: 80
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 128Mi
+        startupProbe:
+          timeoutSeconds: 240
+          periodSeconds: 240
+          failureThreshold: 1
+          tcpSocket:
+            port: 80
+  traffic:
+  - percent: 100
+    latestRevision: true
+status:
+  observedGeneration: 1
+  conditions:
+  - type: Ready
+    status: 'True'
+    lastTransitionTime: '2025-07-04T09:13:57.598483Z'
+  - type: ConfigurationsReady
+    status: 'True'
+    lastTransitionTime: '2025-07-04T09:13:56.355830Z'
+  - type: RoutesReady
+    status: 'True'
+    lastTransitionTime: '2025-07-04T09:13:57.562387Z'
+  latestReadyRevisionName: bostang-nginx-cloudrun-00001-sk4
+  latestCreatedRevisionName: bostang-nginx-cloudrun-00001-sk4
+  traffic:
+  - revisionName: bostang-nginx-cloudrun-00001-sk4
+    percent: 100
+    latestRevision: true
+  url: https://bostang-nginx-cloudrun-fci4ivh7ca-et.a.run.app
+  address:
+    url: https://bostang-nginx-cloudrun-fci4ivh7ca-et.a.run.app

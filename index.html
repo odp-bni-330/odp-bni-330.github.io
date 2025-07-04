@@ -1,346 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <!-- Meta data dokumen -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi Bootcamp ODP IT BNI 330</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Bootcamp ODP IT BNI 330</title>
 
-    <!-- LANGKAH 1 : add cdn bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 
-    <!-- Hubungkan HTML dengan CSS -->
-    <link rel="stylesheet" href="styles.css">
+  <!-- File CSS tambahan -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container py-5">
-        <!-- container : provides a responsive fixed-width layout -->
-         <!-- py-5 : This is a Bootstrap spacing utility class:
-            p = padding
-            y = vertical direction (top and bottom)
-            5 = size scale (from 0 to 5+, where 5 is a large amount of spacing) -->
+  <div class="container py-5">
+    <!-- Judul utama halaman -->
+    <h1 class="main-title text-center text-md-start">🚀Bootcamp ODP IT 330 BNI🧑‍💻</h1>
 
-        <h1 class="main-title text-center text-md-start">🚀Bootcamp ODP IT 330 BNI🧑‍💻</h1>
-        <!-- main-title : class buatan sendiri -->
-        <!-- text-center : class Bootstrap untuk menengahkan teks secara horizontal -->
-        <!-- text-md-start : class Bootstrap untuk mulai dari ukuran layar medium (≥768px), teks akan diatur menjadi rata kiri (start). -->
-
-        <div class="row g-4">
-        <!-- row : class bootstrap u/ membuat baris dalam sistem grid 12 kolom Bootstrap. -->
-         <!-- g-4 : Bootstrap spacing utility -->
-            <!-- g = gutters (jarak antar kolom dan baris) -->
-             <!-- 4 = ukuran skala Bootstrap: 0–5 -->
-
-            <!-- Baris Pertama -->
-             <!-- DAY 1 : Intro to Web Dev. -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <!--    | Class      | Maksudnya                                                                                 |
-                        | ---------- | ----------------------------------------------------------------------------------------- |
-                        | `col-12`   | Di layar kecil (mobile, <576px), kolom ini selebar 12 kolom → penuh 100%                  |
-                        | `col-md-6` | Di layar sedang (≥768px), kolom ini selebar 6 kolom → setengah lebar (50%)                |
-                        | `col-lg-4` | Di layar besar (≥992px), kolom ini selebar 4 kolom → sepertiga lebar (33.33%)             |
-                -->
-                <div class="course-card">
-                    <img width="100px" src="./assets/1-webdev_logo.jpeg" alt="Intro to Web Development (HTML+CSS)">
-                    <h6 class="card-subtitle">D1 : Intro to Web Dev.</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/1-Intro_to_web_dev" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-            
-            <!-- DAY 2 : JS Fundamentals -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="35px" src="./assets/2-JS-logo.png" alt="JS Fundamentals">
-                    <h6 class="card-subtitle">D2 : JS Fundamentals</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/2-JS_fundamentals" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 3 : Intro to Algo & Flowchart -->           
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="50px" src="./assets/3-flowchart.png" alt="Intro to Algorithm & Flowchart">
-                    <h6 class="card-subtitle">D3 : Intro to Algo & Flowchart</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/3-Intro_to_Algo_Flowchart" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- Baris Kedua -->
-            <!-- DAY 4 : OWASP Fundamentals -->           
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="75px" src="./assets/4-OWASP_logo.webp" alt="OWASP Fundamental">
-                    <h6 class="card-subtitle">D4 : OWASP Fundamentals</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/4-OWASP" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-            
-            <!-- DAY 5 : Secure API Dev. -->            
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/5-REST_API.jpeg" alt="REST API">
-                    <h6 class="card-subtitle">D5 : Secure API Dev.</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/5-Intro_to_API" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-            
-            <!-- DAY 6 : Intro to Springboot -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/6-springboot.jpeg" alt="Intro to Springboot">
-                    <h6 class="card-subtitle">D6 : Intro to Springboot</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/6-Intro_to_Springboot" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- Baris Ketiga -->
-            <!-- DAY 7 : ORM -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/7-ORM.png" alt="ORM">
-                    <h6 class="card-subtitle">D7 : ORM</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/7-ORM" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 8 : API Rate Limiting -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/8-JWT.png" alt="API rate limiting">
-                    <h6 class="card-subtitle">D8 : API Rate Limiting</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/8-API_rate_limiting" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 9 : Networking Basic -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/9-networking.jpeg" alt="Networking Basic">
-                    <h6 class="card-subtitle">D9 : Networking Basic</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/9-Networking_basic" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-
-            <!-- DAY 10 : TCP/IP Analysis With Wireshark -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/10-wireshark.jpg" alt="TCP_IP_Analysis_Wireshark">
-                    <h6 class="card-subtitle">D10 : TCP/IP Wireshark</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/10-TCP_IP_Analysis_Wireshark" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 11 : Spring Boot with OracleDB, Caching, and API versioning -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/11-OracleDB_springboot.png" alt="SpringBoot_with_Oracle_DB">
-                    <h6 class="card-subtitle">D11 : Spring Boot with OracleDB, Caching, and API versioning</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/11-OracleDB_SpringBoot" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 12 : Logging and Monitoring using ELK Stack -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/12-elk_stack.webp" alt="ELK_stack">
-                    <h6 class="card-subtitle">D12 : Logging and Monitoring using ELK Stack</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/12-Logging_and_Monitoring_ELKStack" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-             <!-- DAY 13 : OpenShift -->  
-             <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/13-openshift.png" alt="Open Shift">
-                    <h6 class="card-subtitle">D13 : OpenShift</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/13-OpenShift" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-           </div>
-
-            <!-- DAY 14 : Ingress, Config, Healhtcheck pada OpenShift -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/14-healthcheck-openshift.png" alt="Open Shift">
-                    <h6 class="card-subtitle">D14 : Ingress, Config, Healhtcheck pada OpenShift</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/14-DeploymentConfig_LiveCheck_OpenShift" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 15 : Horizontal Pod Autoscalling dan Monitoring pada OpenShift -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/15-horizontal-pod-autoscaling-monitoring.png" alt="Open Shift">
-                    <h6 class="card-subtitle">D15 : Horizontal Pod Autoscalling dan Monitoring pada OpenShift</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/15-HPA-monitoring-OpenShift" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 16 : Persistent Volume Claim dan CI/CD dengan Jenkins -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/16-jenkins.png" alt="Jenkins">
-                    <h6 class="card-subtitle">D16 : Persistent Volume Claim dan CI/CD dengan Jenkins</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/16-PersistentVolumeClaim-Jenkins" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 17 : Load Balancing, Best Practices, dan Dokumentasi dengan Confluence -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/17-confluence.png" alt="Jenkins">
-                    <h6 class="card-subtitle">D17 : Load Balancing, Best Practices, dan Dokumentasi dengan Confluence</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/17-Loadbalancing_documentation" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 18 : Security & Logging -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/18-suricata.jpeg" alt="Suricata">
-                    <h6 class="card-subtitle">D18 : Security & Logging</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/18-Security-Logging" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 19 : VPC, DDoS, Othorization, and Scanning -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/19-sonarqube.png" alt="sonarqube">
-                    <h6 class="card-subtitle">D19 : VPC, DDoS, Othorization, and Scanning</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/19-VPC_DDoS_Othorization_Scanning" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-            
-            <!-- DAY 20 : SQL Injection, XSS, Threat Hunting -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/20-burpsuite.jpg" alt="burpsuite">
-                    <h6 class="card-subtitle">D20 : SQL Injection, XSS, Threat Hunting</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/20-Security-SQL_Injection_XSS_Threat Hunting" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 21 : SQL -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/21-postgres.png" alt="burpsuite">
-                    <h6 class="card-subtitle">D21 : SQL</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/21-SQL" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 22 : Advanced SQL -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/22-database.png" alt="database">
-                    <h6 class="card-subtitle">D22 : Advanced SQL : Sub-queries, Query Planner, Access Control</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/22-Advanced SQL" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 23 : Mongo DB -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/23-mongodb.png" alt="database">
-                    <h6 class="card-subtitle">D23 : Mongo DB</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/23-NoSQL" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 24 : Optimizing Database & Visualisasi Data -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/24-kafka.webp" alt="kafka">
-                    <h6 class="card-subtitle">D24 : Optimisasi DB & Visualisasi Data</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/24-OptimizingDB" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 25 : Data Pipeline & Automation -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/25-airflow.png" alt="Airflow">
-                    <h6 class="card-subtitle">D25 : Data Pipeline & Automation</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/25-Data_Pipeline_Automation" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 26 : Infrastructure Automation dengan Terraform dan Ansible -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/26-terraform-ansible.jpeg" alt="terraform-ansible">
-                    <h6 class="card-subtitle">D26 : Infrastructure Automation dengan Terraform dan Ansible</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/26-Terraform_Ansible" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 27 : Jenkins, Prometheus, Grafana -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/27-prometheus_grafana.png" alt="prometheus-grafana">
-                    <h6 class="card-subtitle">D27 : Jenkins, Prometheus, Grafana</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/27-Jenkins_Prometheus_Grafana" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 28 : ElasticSearch, Logstash, Kibana -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/28-elk.png" alt="elk">
-                    <h6 class="card-subtitle">D28 : ElasticSearch, Logstash, Kibana</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/28-ELK" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-           
-            
-            <!-- DAY 29 : Prometheus, Grafana, Root Cause Analysis -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/29-5-whys.jpeg" alt="RCA">
-                    <h6 class="card-subtitle">D29 : Prometheus, Grafana, Root Cause Analysis</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/29-Prometheus-Grafana-RCA" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 30 : CI/CD dengan Jenkins dan Ansible -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/30-jenkins-ansible.jpeg" alt="Jenkins+Ansible">
-                    <h6 class="card-subtitle">D30 : CI/CD dengan Jenkins dan Ansible</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/30-Jenkins-Ansible" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 31 : Kubernetes -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/31-k8s.png" alt="Kubernetes">
-                    <h6 class="card-subtitle">D31 : Kubernetes dan Minikube</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/31-Kubernetes-Minikube" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-            <!-- DAY 32 : Deployment di Kubernetes -->  
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="course-card">
-                    <img width="100px" src="./assets/32-springboot-k8s.png" alt="Springboot-Kubernetes">
-                    <h6 class="card-subtitle">D32 : Deployment di Kubernetes</h6>
-                    <a href="https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/32-Kubernetes-Deployment" class="btn btn-outline-primary btn-sm view-program">Lihat Materi</a>
-                </div>
-            </div>
-
-
-        </div>
+    <!-- Tempat untuk menampung semua kartu course -->
+    <div class="row g-4" id="courses-container">
+      <!-- Kartu-kartu course akan di-render otomatis dari JS -->
     </div>
 
-        <!-- Tulisan di akhir untuk kunjungi Repo Github -->
-        <div class="text-center mt-5">
-            <a href="https://github.com/odp-bni-330/odp-bni-330.github.io" class="more-programs">🏠Kunjungi Github Repo💻</a>
-        </div>
+    <!-- Link menuju repositori utama di bagian bawah -->
+    <div class="text-center mt-5">
+      <a
+        href="https://github.com/odp-bni-330/odp-bni-330.github.io"
+        class="more-programs"
+        >🏠Kunjungi Github Repo💻</a
+      >
     </div>
+  </div>
 
-    <!-- LANGKAH 2 : add cdn popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script JS untuk render course dari JSON -->
+  <script src="courses.js"></script>
 </body>
 </html>

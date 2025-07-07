@@ -229,5 +229,12 @@
     "image": "./assets/33-GCP.png",
     "alt": "GCP",
     "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/33-Cloud-Computing-GCP"
+  },
+  {
+    "day": "D34",
+    "title": "Jenkins Advanced",
+    "image": "./assets/34-jenkins.png",
+    "alt": "jenkins",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/34-Jenkins-Advanced"
   }
 ]

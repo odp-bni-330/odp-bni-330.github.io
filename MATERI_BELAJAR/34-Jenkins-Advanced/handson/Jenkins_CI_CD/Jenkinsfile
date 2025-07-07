@@ -1,0 +1,70 @@
+pipeline {
+  agent any
+  tools {
+    maven 'Maven 3.8.8'       
+    jdk 'Temurin JDK 17'
+  }
+
+  environment {
+    SONARQUBE_SERVER = 'SonarQube' 
+    SONAR_TOKEN = credentials('sonar_token')
+  }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        git url: 'https://github.com/bostang/spring-boot-rest-api-unit-tests', branch: 'master'
+      }
+    }
+
+    stage('Unit Test & Coverage') {
+      steps {
+        sh 'mvn package'
+      }
+      post {
+        always {
+          junit 'target/surefire-reports/*.xml'
+        }
+      }
+    }
+
+    stage('Static Code Analysis (SAST) via Sonar') {
+      steps {
+// TEMPLATE AWAL DARI SONARQUBE
+//         sh """
+//             mvn clean verify sonar:sonar \
+//   -Dsonar.projectKey=springboot-jenkins-ci-cd \
+//   -Dsonar.projectName='springboot-jenkins-ci-cd' \
+//   -Dsonar.host.url=http://localhost:9001 \
+//   -Dsonar.token=sqp_2bde7d941c01d6f1ef5d9e765ca3c18a826db563
+//         """
+
+// VERSI YANG KURANG BERST-PRACTICE (HARCODED SECRETS)
+// sh """
+//             mvn clean compile sonar:sonar \
+//   -Dsonar.projectKey=springboot-jenkins-ci-cd \
+//   -Dsonar.projectName='springboot-jenkins-ci-cd' \
+//   -Dsonar.host.url=http://sonarqube:9000 \
+//   -Dsonar.token=sqp_2bde7d941c01d6f1ef5d9e765ca3c18a826db563
+//         """
+
+sh """
+            mvn clean compile sonar:sonar \
+  -Dsonar.projectKey=springboot-jenkins-ci-cd \
+  -Dsonar.projectName='springboot-jenkins-ci-cd' \
+  -Dsonar.host.url=http://sonarqube:9000 \
+  -Dsonar.token=${SONAR_TOKEN}
+        """
+      }
+    }
+  }
+
+  post {
+    success {
+      echo "Pipeline berhasil 🚀"
+    }
+    failure {
+      echo "Pipeline gagal 💥"
+    }
+  }
+}

@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juli 2025 -->
+
 # CI/CD
 
 ## Introduction to CI/CD
@@ -866,3 +869,6 @@ apabila di browser terus-terusan nginx atau httpd, kemungkinan besar itu karena 
 maka : cek dengan curl
 
 ![pengujian-canary-deployment](./img/pengujian-canary-deployment.png)
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

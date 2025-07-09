@@ -236,5 +236,12 @@
     "image": "./assets/34-jenkins.png",
     "alt": "jenkins",
     "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/34-Jenkins-Advanced"
+  },
+  {
+    "day": "D35",
+    "title": "End to End CI/CD Pipeline",
+    "image": "./assets/35-e2e-cicd.png",
+    "alt": "end-to-end-ci-cd-pipeline",
+    "link": "https://github.com/odp-bni-330/odp-bni-330.github.io/tree/main/MATERI_BELAJAR/35-End to End CI-CD Pipeline"
   }
 ]

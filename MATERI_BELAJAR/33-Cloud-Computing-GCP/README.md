@@ -1,3 +1,6 @@
+<!-- Dirangkum oleh : Bostang Palaguna -->
+<!-- Juli 2025 -->
+
 # Cloud Infrastructure
 
 ## Introduction to Cloud Computing
@@ -417,3 +420,6 @@ Extras (FOR FUN): load testing
 ![load-testing](./img/load-testing.png)
 
 ![resquest-count](./img/resquest-count.png)
+
+---
+[🏠Back to Course Lists](https://odp-bni-330.github.io/)

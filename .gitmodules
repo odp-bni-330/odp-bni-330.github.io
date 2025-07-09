@@ -1,3 +1,7 @@
 [submodule "MATERI_BELAJAR/5-Intro_to_API/forum-api"]
 	path = MATERI_BELAJAR/5-Intro_to_API/forum-api
 	url = git@github.com:cisnux-seed/forum-api.git
+
+[submodule "MATERI_BELAJAR/35-End to End CI-CD Pipeline/handson/e2e-ci-cd-jenkins/spring-boot-unit-test-rest-controller"]
+    path = MATERI_BELAJAR/35-End to End CI-CD Pipeline/handson/e2e-ci-cd-jenkins/spring-boot-unit-test-rest-controller
+    url = git@github.com:bostang/spring-boot-unit-test-rest-controller.git
